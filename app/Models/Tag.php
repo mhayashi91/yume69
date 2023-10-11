@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    public function posts()
+    {
+        return $this->belongsToMany('App\Models\Post');
+    }
+    public function post_tags()
+    {
+        return $this->belongsToMany('App\Models\Post_tag');
+    }
 }
