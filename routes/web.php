@@ -20,3 +20,40 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//投稿一覧表示
+Route::get('/posts', [App\Http\Controllers\PostController::class, 'index'])->name('posts.index');
+
+//投稿の新規作成
+Route::get('/posts/create', [App\Http\Controllers\PostController::class, 'create'])->name('posts.create');
+
+//タスク保存
+Route::post('/posts', [App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
+
+//タスク編集
+Route::get('/posts/{id}/edit', [App\Http\Controllers\PostController::class, 'edit'])->name('posts.edit');
+
+//タスク変更更新
+Route::put('posts/{id}', [App\Http\Controllers\PostController::class, 'update'])->name('posts.update');
+
+//タスク削除
+Route::delete('/posts/{id}', [App\Http\Controllers\PostController::class, 'destroy'])->name('posts.destroy');
+
+// 簡易検索
+Route::get('/posts/search', [App\Http\Controllers\PostController::class, 'search'])->name('posts.search');
+
+//ブックマーク作成
+Route::get('posts/{post_id}/bookmarks', [App\Http\Controllers\BookmarkController::class, 'store']);
+
+//ブックマークを取り消す
+Route::get('bookmarks/{bookmark_id}', [App\Http\Controllers\BookmarkController::class, 'destroy']);
+
+//コメント機能
+Route::get('/comments/create/{post_id}',[App\Http\Controllers\CommentController::class, 'create'])->name('comments.create');
+
+Route::post('/comments',[App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');
+
+// ユーザー詳細ページ
+Route::get('/user/show/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
+
+// タグのルーティングはまだ書いてないのでそこんとこお願いします。
