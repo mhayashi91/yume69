@@ -101,7 +101,7 @@
 
                             <div class="col-md-6">
                                 <input id="sns_link" type="text" class="form-control" name="sns_link" placeholder="例：Instagram、Facebook、LINEなど" autofocus>
-                                @error('occupation')
+                                @error('sns_link')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
