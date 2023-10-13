@@ -18,12 +18,12 @@ class CreateUsersTable extends Migration
             $table->string('name', 30);
             $table->string('email', 30)->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password', 30);
+            $table->string('password', 90);
             $table->rememberToken();
             $table->text('avatar');
-            $table->string('occupation', 30);
-            $table->string('introduction', 200);
-            $table->text('sns_link');
+            $table->string('occupation', 30)->default('職業');
+            $table->string('introduction', 200)->default('自己紹介');
+            $table->text('sns_link')->nullable();
             $table->timestamps();
         });
     }

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
+  @extends('layouts.app')
 
+  @section('content')
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,18 +32,23 @@
     <div class="profile-box">
       <div class="image-container">
         <a href="#">
-          <img src="img/onepiece02_zoro.png" alt="Image">
+          <img src="" alt="Image">
         </a>
       </div>
       <h2 class="name">仮名前</h2>
       <h3 class="occupation">仮職業</h3>
-      <a href="">仮ロゴ</a>
+      <a href="">
+        <img src="{{ asset('storage/images/contact.png') }}" alt="" class="contact-button">
+      </a>
     </div>
 
     <div class="post-content-cover">
       <div class="post-content">
         <h2 class="title">仮タイトル</h2>
         <p class="contents">仮内容</p>
+      </div>
+      <div class="tags">
+
       </div>
     </div>
 
@@ -53,7 +60,9 @@
         <input type="submit" value='削除' class="btn btn-danger" onclick='return confirm("本当に削除しますか？")'>
       </form>
       <div class="bookmark">
-        <a href="#">仮ブックマーク</a>
+        <a href="#">
+          <img src="{{ asset('storage/images/katarouze.png') }}" alt="" class="katarouze">
+        </a>
       </div>
       <a href="#" class="comment-button">コメント</a>
     </div>
@@ -73,5 +82,5 @@
   </footer>
 
 </body>
-
+@endsection
 </html>
