@@ -86,6 +86,12 @@
 
                             <div class="col-md-6">
                                 <input id="occupation" type="text" class="form-control" name="occupation" placeholder="例：看護師、学生、無職、サラリーマン、製造業など" autofocus>
+
+                                @error('occupation')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -95,6 +101,11 @@
 
                             <div class="col-md-6">
                                 <input id="sns_link" type="text" class="form-control" name="sns_link" placeholder="例：Instagram、Facebook、LINEなど" autofocus>
+                                @error('occupation')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -104,6 +115,11 @@
 
                             <div class="col-md-6">
                                 <textarea id="introduction" class="form-control" name="introduction" rows="4" autofocus placeholder="はじめまして！私は現在...."></textarea>
+                                @error('introduction')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 

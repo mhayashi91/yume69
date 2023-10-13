@@ -54,7 +54,11 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'avatar' =>['required', 'image'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'occupation' => ['string', 'max:20'], // 職業のバリデーションルール
+            'sns_link' => ['url', 'max:255'], // SNSリンクのバリデーションルール
+            'introduction' => ['string', 'max:200'], // 自己紹介のバリデーションルール
+    ]);
+
     }
 
     /**
@@ -65,6 +69,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // dd($data);
+
         $avatar = request()->file('avatar')->getClientOriginalName();
         request()->file('avatar')->storeAs('public/images', $avatar);
                 return User::create([
@@ -72,6 +78,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'avatar' => $avatar,
             'password' => Hash::make($data['password']),
+            'occupation' => $data['occupation'], // 職業のフィールドを追加
+            'sns_link' => $data['sns_link'], // SNSリンクのフィールドを追加
+            'introduction' => $data['introduction'], // 自己紹介のフィールドを追加
         ]);
     }
 }
