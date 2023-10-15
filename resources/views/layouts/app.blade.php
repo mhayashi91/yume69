@@ -79,5 +79,11 @@
             @yield('content')
         </main>
     </div>
+    
+{{-- フッター追加 --}}
+    <footer>
+        Copyright &copy; yume69 Inc.
+      </footer>
+
 </body>
 </html>

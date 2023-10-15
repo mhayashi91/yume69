@@ -11977,3 +11977,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+footer {
+  text-align: center;
+  padding-bottom: 24px;
+  position: fixed;
+  bottom: 0; /* 画面下端に固定 */
+  width: 100%;
+}
