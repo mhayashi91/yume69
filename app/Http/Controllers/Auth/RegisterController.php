@@ -54,9 +54,9 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'avatar' =>['required', 'image'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'occupation' => ['string', 'max:20'], // 職業のバリデーションルール
-            'sns_link' => ['url', 'max:255'], // SNSリンクのバリデーションルール
-            'introduction' => ['string', 'max:200'], // 自己紹介のバリデーションルール
+            'occupation' => ['nullable', 'string', 'max:20'], // 職業のバリデーションルール
+            'sns_link' => ['nullable', 'url', 'max:255'], // SNSリンクのバリデーションルール
+            'introduction' => ['nullable', 'string', 'max:200'], // 自己紹介のバリデーションルール
     ]);
 
     }

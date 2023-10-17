@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #B0E57C;
+  margin: 0;
+  padding: 0;
+  /* background-image: url("{{asset('storage/images/haikei2.png/')}}"); */
+}
+
+h1 {
+  text-align: center;
+}
+
+.mypage {
+  margin: 28px 64px 28px;
+  padding: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 30px;
+  gap: 48px;
+}
+
+.profile {
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  border: 1px solid green;
+}
+
+.profile-content {
+  /* border: solid 1px black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-content {
+  display: flex;
+  align-items: center;
+  width: 450px;
+  justify-content: space-around;
+}
+
+.name-occupation {
+  margin-right: 64px;
+}
+
+.name {
+  font-size: 32px;
+  text-align: center;
+  border-bottom: 1px solid green;
+}
+
+.occupation {
+  margin-top: 32px;
+  font-size: 32px;
+  border-bottom: 1px solid green;
+}
+
+.name>span,
+.occupation>span {
+  font-size: 24px;
+}
+
+.sns-link {
+  font-size: 56px;
+  color: green;
+  padding: 0 24px;
+  border-radius: 50%;
+  border: 1px solid green;
+}
+
+.mybookmark-box {
+  border-radius: 10px;
+  background-color: #B0E57C;
+  ;
+  padding: 32px;
+  width: 160px;
+  height: 350px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+
+.mybookmark-box>p {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.mybookmark {
+  font-size: 24px;
+  text-decoration: none;
+  color: black;
+
+}
+
+.mybookmark-image {
+  /* height: 80px; */
+  width: 100px;
+  margin-top: 32px;
+}
+
+.fas {
+  color: black;
+  font-size: 40px;
+}
+
+.bottom-content {
+  width: 450px;
+  height: 270px;
+  border: 1px solid green;
+  border-radius: 10px;
+  margin-top: 56px;
+  padding: 16px;
+}
+
+.introduction>h5 {
+  text-align: center;
+  padding-bottom: 16px;
+}
+
+.bottom-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.update {
+  text-decoration: none;
+  background-color: skyblue;
+  padding: 20px 24px;
+  border-radius: 10px;
+  text-align: center;
+  color: black;
+  font-size: 24px;
+}
+
+.back {
+  padding: 8px 24px;
+  background-color: orange;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-right: 72px;
+  border-radius: 10px;
+  font-size: 24px;
+  color: black;
+  border: none;
+}
