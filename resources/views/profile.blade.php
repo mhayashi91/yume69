@@ -20,15 +20,15 @@
             <div class="profile-content">
                 <div class="top-content">
                     <div class="name-occupation">
-                        <h3 class="name"><span>名前：</span>{{ $post->user->name }}</h3>
-                        <h3 class="occupation"><span>職業：</span>{{ $post->user->occupation }}</h3>
+                        <h3 class="name"><span>名前：</span>{{ $user->name }}</h3>
+                        <h3 class="occupation"><span>職業：</span>{{ $user->occupation }}</h3>
                     </div>
-                    <a href="{{ $post->user->sns_link }}" class="sns-link"><i class="far fa-envelope"></i></a>
+                    <a href="{{ $user->sns_link }}" class="sns-link"><i class="far fa-envelope"></i></a>
                 </div>
                 <div class="bottom-content">
                     <div class="introduction">
                         <h5>自己紹介</h5>
-                        <p>{{ $post->user->introduction }}
+                        <p>{{ $user->introduction }}
                         </p>
                     </div>
                 </div>

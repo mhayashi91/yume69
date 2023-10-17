@@ -41,6 +41,9 @@ header {
 }
 
 /* 投稿部分 */
+.big-container {
+  display: flex;
+}
 .post-box {
   margin-top: 48px;
   margin-bottom: 48px;
@@ -92,7 +95,7 @@ header {
 }
 
 .sns-icon {
-font-size: 24px;
+font-size: 40px;
 color: blue;
 }
 
