@@ -24,22 +24,24 @@
             </div>
             <div class="header-right">
                 <button class="create-button">
-                    <a href="#">新規投稿</a>
+                    <a href="{{ route('posts.create') }}">新規投稿</a>
                 </button>
             </div>
         </header>
 
         <div class="post-box">
 
-            <div class="profile-box">
+            < class="profile-box">
                 <div class="image-container">
                     <a href="#">
                         {{-- 仮画像エネル --}}
                         <img src="{{ asset('storage/images/onepiece14_enel.png') }}" alt="Image">
                     </a>
                 </div>
-                <h3 class="name">仮名前</h3>
-                <h3 class="occupation">仮職業</h3>
+                @foreach($posts as $post)
+                {{-- {{ dd($posts); }} --}}
+                <h3 class="name">{{ $post->user->name }}</h3>  
+                <h3 class="occupation">{{ $post->occupation }}</h3>
                 <a href="" class="sns-icon">
                     <i class="far fa-paper-plane"></i>
                 </a>
@@ -47,17 +49,18 @@
 
             <div class="post-content-cover">
                 <div class="post-content">
-                    <h2 class="title">仮タイトル</h2>
-                    <p class="contents">仮内容</p>
+                    <h2 class="title">{{ $post->title }}</h2>
+                    <p class="contents">{{ $post->contents }}</p>
                 </div>
                 <div class="tags">
-                    <p class="tags_cnotent">仮タグ</p>
+                    <p class="tags_cnotent">{{ $post->tags_cnotent }}</p>
                 </div>
             </div>
+               @endforeach
 
             <div class="buttons">
-                <a href="#" class="edit-button">編集</a>
-                <form action="" method="post">
+                <a href="" class="edit-button">編集</a>
+                <form action="#" method="post">
                     @csrf
                     @method('delete')
                     <input type="submit" value='削除' class="delete" onclick='return confirm("本当に削除しますか？")'>

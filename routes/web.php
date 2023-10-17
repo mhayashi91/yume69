@@ -27,16 +27,16 @@ Route::get('/posts', [App\Http\Controllers\PostController::class, 'index'])->nam
 //投稿の新規作成
 Route::get('/posts/create', [App\Http\Controllers\PostController::class, 'create'])->name('posts.create');
 
-//タスク保存
+//ポスト保存
 Route::post('/posts', [App\Http\Controllers\PostController::class, 'store'])->name('posts.store');
 
-//タスク編集
+//ポスト編集
 Route::get('/posts/{id}/edit', [App\Http\Controllers\PostController::class, 'edit'])->name('posts.edit');
 
-//タスク変更更新
+//ポスト変更更新
 Route::put('posts/{id}', [App\Http\Controllers\PostController::class, 'update'])->name('posts.update');
 
-//タスク削除
+//ポスト削除
 Route::delete('/posts/{id}', [App\Http\Controllers\PostController::class, 'destroy'])->name('posts.destroy');
 
 // 簡易検索
