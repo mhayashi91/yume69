@@ -67,10 +67,17 @@
                             {{-- btn btn-danger --}}
                         </form>
                         <a href="#" class="comment-button">コメント</a>
+
                         <div class="bookmark">
-                            <a href="" class="bookmark-icon "><i class="fas fa-handshake"></i></a>
-                            <a href="" class="bookmark-icon "><i class="far fa-handshake"></i></a>
+                            @if($post->likedBy(Auth::user())->count() > 0)
+                            <a href="/bookmarks/{{ $post->likedBy(Auth::user())
+                                ->firstOrfail()->id }}" class="bookmark-icon "><i class="fas fa-handshake"></i></a>
+                            @else
+                            <a href="/posts/{{ $post->id }}/bookmarks" class="bookmark-icon "><i class="far fa-handshake"></i></a>
+                            @endif
+                            {{ $post->bookmarks->count() }}
                         </div>
+
                     </div>
                     <a href="" class="comment-rink">
                         <h5 class="comment-watch">コメントを見る！</h5>
@@ -84,6 +91,7 @@
             </div> --}}
                 </div>
             @endforeach
+            
         </div>
     </body>
 @endsection
