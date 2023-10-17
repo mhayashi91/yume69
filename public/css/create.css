@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.card-header {
+  text-align: center;
+}
+
+.card-body {
+background-color: pink;
+}
+.card-body2 {
+ height: 600px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 64px;
+ padding: 0;
+}
+
+.yume-title-area {
+  width: 500px;
+  padding: 8px;
+}
+.yume-contents {
+ 
+}
+.yume-contents-area {
+  width: 500px;
+  height: 150px;
+  padding: 8px;
+}
+
+.hassyu-area {
+  width: 500px;
+  padding: 8px;
+}
+
+.post-buttons {
+  text-align: center;
+}
+
+.cancel {
+ margin-right: 32px;
+ padding: 8px 12px;
+ border-radius: 5px;
+ border: none;
+ border: 1px solid black;
+}
+
+.post {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid black;
+}
