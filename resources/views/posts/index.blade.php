@@ -33,9 +33,8 @@
 
             < class="profile-box">
                 <div class="image-container">
-                    <a href="#">
-                        {{-- 仮画像エネル --}}
-                        <img src="{{ asset('storage/images/onepiece14_enel.png') }}" alt="Image">
+                    <a href="{{ route('show',[$post->user->id]) }}">
+                        <img src="" alt="Image">
                     </a>
                 </div>
                 @foreach($posts as $post)
@@ -72,15 +71,16 @@
                     <a href="" class="bookmark-icon "><i class="far fa-handshake"></i></a>
                 </div>
             </div>
-
-            <h3 class="comment-index">コメント一覧</h3>
-            <div class="comment-box">
+            <a href="" class="comment-rink">
+                <h5 class="comment-watch">コメントを見る！</h5>
+            </a>
+            {{-- <div class="comment-box">
                 <h6 class="comment-name">投稿者：仮</h6>
                 <div class="comment-body">
                     <h6 class="comment-date">投稿日時：仮</h6>
                     <p class="comment-text">内容：仮</p>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
     </body>

@@ -3952,6 +3952,7 @@ textarea.form-control-lg {
   color: var(--bs-navbar-brand-color);
   text-decoration: none;
   white-space: nowrap;
+  /* background-image: url("{{ asset('/storage/images/yume-title.png') }}"); */
 }
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
@@ -11980,8 +11981,10 @@ textarea.form-control-lg {
 
 footer {
   text-align: center;
-  padding-bottom: 24px;
-  position: fixed;
-  bottom: 0; /* 画面下端に固定 */
+  padding: 24px 0;
+  /* position: fixed; */
+  /* bottom: 0; */
   width: 100%;
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
 }

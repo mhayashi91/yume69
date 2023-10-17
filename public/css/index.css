@@ -76,6 +76,7 @@ header {
 
 .post-content-cover {
   width: 480px;
+  height: 300px;
   border: 3px solid black;
   border-radius: 5px;
 }
@@ -83,7 +84,7 @@ header {
 .title {
   width: 474px;
   border-bottom: 2px solid red;
-  padding: 8px;
+  padding: 12px;
 }
 
 .contents {
@@ -96,12 +97,13 @@ color: blue;
 }
 
 .tags{
-  width: 550px;
+  width: 475px;
   padding: 8px;
   /* text-align: center; */
 }
 
 .post-content {
+  width: 475px;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -167,10 +169,21 @@ text-decoration: none;
   align-items: center;
 }
 
-.comment-index {
-  margin-top: 32px;
+.comment-rink {
+  text-decoration: none;
+  color: black;
+  background-color: greenyellow;
+  border-radius: 10px;
+  padding:16px 165px;
   margin-bottom: 32px;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
 }
+.comment-watch {
+  margin-bottom: 0;
+}
+
 .comment-box {
   width: 400px;
   border: 1px solid black;
