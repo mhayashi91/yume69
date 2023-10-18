@@ -6,9 +6,9 @@
 <div class="big-container">
     
     <div class="middle-container-1">
+        <h2>以下の記事にコメントします</h2>
         <div class="small-container-1">
             <div class="content-container">
-                <h2>以下の記事にコメントします</h2>
                 <div class="card-header">
                         <div class="image-container">
                             <a href="{{ route('show', [$post->user->id]) }}">
@@ -34,7 +34,7 @@
                 @csrf
                 <input type="hidden" name="post_id" value="{{ $post->id }}">
                 <div class="form-group">
-                    <h2>コメント</h2>
+                    <h3>コメント</h3>
                     <textarea class="form-control" 
                     placeholder="内容" rows="5" name="body"></textarea>
                 </div>

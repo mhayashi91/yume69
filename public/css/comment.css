@@ -6,17 +6,18 @@
 .big-container{
     display: flex;
     flex-direction: row;
-    background-color: black;
+    /* background-color: black; */
     justify-content: space-around;
     padding-left: 220px;
     padding-right: 220px;
-    height: auto;
+    height: 780px;
 }
 
 .middle-container-1{
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 600px;
     height: 500px;
+    border: 2px solid black;
 }
 
 .content-container{
@@ -26,7 +27,7 @@
 }
 
 .small-container-1{
-    background-color: chocolate;
+    /* background-color: chocolate; */
 }
 
 .card-header{
@@ -44,15 +45,31 @@
 }
 
 .middle-container-2{
-    background-color: blue;
+    /* background-color: blue; */
     width: 600px;
     height: 500px;
     padding: 30px 30px;
+    border: 2px solid black;
 
 }
 
+.form-group{
+    margin: 70px;
+    /* border: 2px solid black; */
+}
+
+.form-control{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.post-buttons{
+    display: flex;
+    padding-left: 100px;
+    margin-left: 10px;
+}
+
 .comment-button {
-    margin-right: 32px;
     padding: 8px 12px;
     border-radius: 5px;
     border: none;
@@ -62,7 +79,7 @@
 
 
 .cancel {
-    margin-right: 32px;
+    margin-right: 20px;
     padding: 8px 12px;
     border-radius: 5px;
     border: none;
