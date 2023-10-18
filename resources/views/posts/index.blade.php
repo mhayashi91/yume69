@@ -59,8 +59,8 @@
                     {{-- @endforeach --}}
 
                     <div class="buttons">
-                        <a href="" class="edit-button">編集</a>
-                        <form action="#" method="post">
+                        <a href="{{ route('posts.edit', $post->id) }}" class="edit-button">編集</a>
+                        <form action="{{ route('posts.destroy', $post->id) }}" method="post">
                             @csrf
                             @method('delete')
                             <input type="submit" value='削除' class="delete" onclick='return confirm("本当に削除しますか？")'>

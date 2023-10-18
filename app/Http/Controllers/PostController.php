@@ -40,13 +40,29 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
-    // function edit($id)
-    // {
-    //     $post = Post::find($id);
-    //     return view('posts.edit' , ['post'=>$post]);
-    // }
+    function edit($id)
+    {
+        $post = Post::find($id);
+        return view('posts.edit',['post'=>$post]);
+    }
 
+    function update(Request $request, $id)
+    {
+        $post = Post::find($id);
 
+        $post -> title = $request -> title;
+        $post -> contents = $request -> contents;
+        $post -> save();
 
+        $posts = Post::latest()->get();
 
+        return view('posts.index',compact('posts'));
+    }
+
+    function destroy($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
+        return redirect()->route('posts.index');
+    }
 }
