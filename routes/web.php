@@ -53,6 +53,10 @@ Route::get('/comments/create/{post_id}',[App\Http\Controllers\CommentController:
 
 Route::post('/comments',[App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');
 
+//コメント一覧表示
+Route::get('/comments/show/{id}', [App\Http\Controllers\CommentController::class, 'show'])->name('comments.show');
+
+
 // ユーザー詳細ページ
 Route::get('/user/show/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
 

@@ -11,6 +11,7 @@
             <div class="content-container">
                 <div class="card-header">
                         <div class="image-container">
+                            {{-- ここのコードあとでかえる --}}
                             <a href="{{ route('show', [$post->user->id]) }}">
                                 <img src="{{ asset('storage/images/' . $post->user->avatar) }}" alt="Image" width="70px" height="70px">
                             </a>
