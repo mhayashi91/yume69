@@ -125,9 +125,14 @@ h1 {
   padding-bottom: 16px;
 }
 
+.introduction p {
+  /* max-width: 100%; */
+  word-wrap: break-word; 
+}
+
 .bottom-button {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin-bottom: 64px;
 }
 

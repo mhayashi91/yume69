@@ -50,13 +50,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'name' => ['required', 'string', 'max:15'],
+            'email' => ['required', 'string', 'email', 'max:30', 'unique:users'],
             'avatar' =>['required', 'image'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'occupation' => ['nullable', 'string', 'max:20'], // 職業のバリデーションルール
+            'occupation' => ['nullable', 'string', 'max:15'], // 職業のバリデーションルール
             'sns_link' => ['nullable', 'url', 'max:255'], // SNSリンクのバリデーションルール
-            'introduction' => ['nullable', 'string', 'max:200'], // 自己紹介のバリデーションルール
+            'introduction' => ['nullable', 'string', 'max:100'], // 自己紹介のバリデーションルール
     ]);
 
     }

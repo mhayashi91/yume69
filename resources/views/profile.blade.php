@@ -44,8 +44,10 @@
 
         </div>
         <div class="bottom-button">
-            <button type="button" class="back" onclick="history.back()">戻る</button>
-            <a href="" class="update">登録情報更新</a>
+            <button type="button" class="back" onclick="window.location.href = '{{ route('posts.index') }}'">戻る</button>
+            @if($user->id == Auth::user()->id)
+            <a href="{{ route('user.edit') }}" class="update">登録情報更新</a>
+            @endif
         </div>
 
     </body>
