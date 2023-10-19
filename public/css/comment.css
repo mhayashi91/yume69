@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.big-container{
+    display: flex;
+    flex-direction: row;
+    /* background-color: black; */
+    justify-content: space-around;
+    padding-left: 220px;
+    padding-right: 220px;
+    height: 780px;
+}
+
+.middle-container-1{
+    /* background-color: aqua; */
+    width: 600px;
+    height: 500px;
+    border: 2px solid black;
+}
+
+.content-container{
+    padding-top: 30px;
+    padding-left: 60px;
+    padding-bottom: 30px;
+}
+
+.small-container-1{
+    /* background-color: chocolate; */
+}
+
+.card-header{
+    display: flex;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.image-container{
+    padding-right: 30px;
+}
+
+.name-box{
+    padding-top: 40px;
+}
+
+.middle-container-2{
+    /* background-color: blue; */
+    width: 600px;
+    height: 500px;
+    padding: 30px 30px;
+    border: 2px solid black;
+
+}
+
+.form-group{
+    margin: 70px;
+    /* border: 2px solid black; */
+}
+
+.form-control{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.post-buttons{
+    display: flex;
+    padding-left: 100px;
+    margin-left: 10px;
+}
+
+.comment-button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: orange;
+    border: 1px solid black;
+}
+
+
+.cancel {
+    margin-right: 20px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid black;
+}

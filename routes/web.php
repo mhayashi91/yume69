@@ -53,6 +53,18 @@ Route::get('/comments/create/{post_id}',[App\Http\Controllers\CommentController:
 
 Route::post('/comments',[App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');
 
+//コメントしたコメント一覧表示
+Route::get('/comments/show/{id}', [App\Http\Controllers\CommentController::class, 'show'])->name('comments.show');
+
+// コメント一覧表示
+Route::get('/comments/show-post-comments/{post}', [App\Http\Controllers\CommentController::class, 'showPostComments'])->name('comments.showPostComments');
+
+//コメント削除
+Route::delete('/comments/{id}', [App\Http\Controllers\CommentController::class, 'destroy'])->name('comments.destroy');
+
+
+
+
 // ユーザー詳細ページ
 Route::get('/user/show/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
 

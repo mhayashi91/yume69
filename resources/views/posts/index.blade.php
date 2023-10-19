@@ -66,9 +66,15 @@
                             <input type="submit" value='削除' class="delete" onclick='return confirm("本当に削除しますか？")'>
                             
                         </form>
-                        @endif        
+                        @endif    
 
-                        <a href="#" class="comment-button">コメント</a>
+
+                        {{-- <a href="{{ route('comments.create', ['post_id' => $post->id]) }}" class="comment-button">コメント</a> --}}
+                        @if($post->user->id !== Auth::user()->id)
+                        <a href="{{ route('comments.create', ['post_id' => $post->id]) }}" class="comment-button">コメント</a>
+                        @endif
+
+                            
 
                         <div class="bookmark">
                             @if($post->likedBy(Auth::user())->count() > 0)
@@ -82,9 +88,13 @@
                         </div>
                        
                     </div>
-                    <a href="" class="comment-rink">
+                    {{-- <a href="" class="comment-rink">
+                        <h5 class="comment-watch">コメントを見る！</h5>
+                    </a> --}}
+                    <a href="{{ route('comments.showPostComments', $post) }}" class="comment-rink">
                         <h5 class="comment-watch">コメントを見る！</h5>
                     </a>
+                    
                     {{-- <div class="comment-box">
                          <h6 class="comment-name">投稿者：仮</h6>
                          <div class="comment-body">
