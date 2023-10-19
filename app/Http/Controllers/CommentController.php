@@ -28,10 +28,10 @@ class CommentController extends Controller
         return redirect()->route('comments.show',$post->id);
     }
 
-    // public function show($id)
-    // {
-    //     $comment = Comment::find($id);
-    //     $post = $comment->post;  
-    //     return view('comments.show', compact('comment', 'post'));
-    // }
+    public function show($id)
+    {
+        $comment = Comment::find($id);
+        $post = $comment->post;  
+        return view('comments.show', compact('comment', 'post'));
+    }
 }
