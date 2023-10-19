@@ -31,13 +31,10 @@ class CommentController extends Controller
     public function show($id)
     {
         $comment = Comment::find($id);
-        // $comment = Comment::latest()->get();
-        // if (!$comment) {
-        //     abort(404, 'コメントが存在しません');
-        // }
-
         $post = $comment-> post;  
-        return view('comments.show', compact('comment', 'post'));
+        // return view('comments.show', compact('comment', 'post'));
+        $comments = $post->comments;
+        return view('comments.show', compact('post', 'comments'));
     }
 
     public function showPostComments(Post $post)
