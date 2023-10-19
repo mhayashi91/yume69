@@ -66,7 +66,11 @@
                             <input type="submit" value='削除' class="delete" onclick='return confirm("本当に削除しますか？")'>
                             {{-- btn btn-danger --}}
                         </form>
+
+                        {{-- <a href="{{ route('comments.create', ['post_id' => $post->id]) }}" class="comment-button">コメント</a> --}}
+                        @if($post->user->id !== Auth::user()->id)
                         <a href="{{ route('comments.create', ['post_id' => $post->id]) }}" class="comment-button">コメント</a>
+                        @endif
 
                         <div class="bookmark">
                             @if($post->likedBy(Auth::user())->count() > 0)
