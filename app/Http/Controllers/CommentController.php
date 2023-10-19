@@ -25,7 +25,7 @@ class CommentController extends Controller
         $comment -> post_id = $request -> post_id;
         $comment -> save();
     
-        return redirect()->route('comments.show',$post->id);
+        return redirect()->route('comments.showPostComments',$post->id);
     }
 
     public function show($id)
@@ -34,7 +34,8 @@ class CommentController extends Controller
         $post = $comment-> post;  
         // return view('comments.show', compact('comment', 'post'));
         $comments = $post->comments;
-        return view('comments.show', compact('post', 'comments'));
+        // return view('comments.show', compact('post', 'comments'));
+        return redirect()->route('comments.showPostComments',$post->id);
     }
 
     public function showPostComments(Post $post)
@@ -53,9 +54,9 @@ class CommentController extends Controller
 
         if (Auth::id() === $comment->user_id) {
             $comment->delete();
-            return redirect()->route('comments.show', $comment->post->id)->with('success', 'コメントが削除されました');
+            return redirect()->route('comments.showPostComments', $comment->post->id)->with('success', 'コメントが削除されました');
         } else {
-            return redirect()->route('comments.show', $comment->post->id)->with('error', 'コメントを削除する権限がありません');
+            return redirect()->route('comments.showPostComments', $comment->post->id)->with('error', 'コメントを削除する権限がありません');
         }
     }
 
