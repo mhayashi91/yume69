@@ -26,7 +26,7 @@
                 </button>
             </div>
         </header> --}}
-        <h2>検索結果</h2>
+        <h2 style="text-align: center;">検索結果</h2>
         @if ($posts->isEmpty())
             <p>該当するタスクはありません。</p>
         @else
