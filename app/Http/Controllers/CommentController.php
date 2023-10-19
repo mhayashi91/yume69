@@ -46,4 +46,21 @@ class CommentController extends Controller
         return view('comments.show', compact('post', 'comments'));
     }
 
+    public function destroy($id)
+    {
+        $comment = Comment::find($id);
+
+        if (!$comment) {
+            return redirect()->route('posts.index')->with('error', 'コメントが見つかりません');
+        }
+
+        if (Auth::id() === $comment->user_id) {
+            $comment->delete();
+            return redirect()->route('comments.show', $comment->post->id)->with('success', 'コメントが削除されました');
+        } else {
+            return redirect()->route('comments.show', $comment->post->id)->with('error', 'コメントを削除する権限がありません');
+        }
+    }
+
+
 }

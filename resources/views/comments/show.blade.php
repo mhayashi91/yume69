@@ -32,7 +32,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8 mt-5">
             コメント一覧
-            @foreach($post->comments as $comment)
+            {{-- @foreach($post->comments as $comment)
                 <div class="card mt-3">
                     <h5 class="card-header">投稿者：{{ $comment->user->name }}</h5>
                     <div class="card-body">
@@ -40,7 +40,24 @@
                         <p class="card-text">内容：{{ $comment->body }}</p>
                     </div>
                 </div>
-            @endforeach
+            @endforeach --}}
+            @foreach($post->comments as $comment)
+            <div class="card mt-3">
+                <h5 class="card-header">投稿者：{{ $comment->user->name }}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">投稿日時：{{ $comment->created_at }}</h5>
+                    <p class="card-text">内容：{{ $comment->body }}</p>
+                    @if(Auth::id() === $comment->user_id)
+                        <form action="{{ route('comments.destroy', $comment->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">削除</button>
+                        </form>
+                    @endif
+                </div>
+            </div>
+@endforeach
+
             </div>
         </div>
 

@@ -59,6 +59,10 @@ Route::get('/comments/show/{id}', [App\Http\Controllers\CommentController::class
 // コメント一覧表示
 Route::get('/comments/show-post-comments/{post}', [App\Http\Controllers\CommentController::class, 'showPostComments'])->name('comments.showPostComments');
 
+//コメント削除
+Route::delete('/comments/{id}', [App\Http\Controllers\CommentController::class, 'destroy'])->name('comments.destroy');
+
+
 
 
 // ユーザー詳細ページ
