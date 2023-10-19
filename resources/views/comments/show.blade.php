@@ -1,6 +1,34 @@
 @extends('layouts.app')
 @section('content')
 
+        <h2>以下の投稿についたコメント一覧</h2>
+        <div class="small-container-1">
+            <div class="content-container">
+                <div class="card-header">
+                        <div class="image-container">
+                            {{-- ここのコードあとでかえる --}}
+                            <a href="{{ route('show', [$post->user->id]) }}">
+                                <img src="{{ asset('storage/images/' . $post->user->avatar) }}" alt="Image" width="70px" height="70px">
+                            </a>
+                        </div>
+                        <div class="name-box">
+                            <h3 class="name">{{ $post->user->name }}</h3>
+                        </div>
+                </div>
+                <div class="card-body">
+                    <h5>タイトル：{{ $post->title }}</h5>
+                    <p class="card-text">内容：{{ $post->contents }}</p>
+                    <p>投稿日時：{{ $post->created_at }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-8">
+                <a href="{{ route('posts.index') }}" class="btn btn-primary">一覧に戻る</a>
+            </div>
+        </div>
+
         <div class="row justify-content-center">
             <div class="col-md-8 mt-5">
             コメント一覧
@@ -15,5 +43,6 @@
             @endforeach
             </div>
         </div>
+
     
 @endsection

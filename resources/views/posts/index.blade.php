@@ -79,9 +79,13 @@
                         </div>
 
                     </div>
-                    <a href="" class="comment-rink">
+                    {{-- <a href="" class="comment-rink">
+                        <h5 class="comment-watch">コメントを見る！</h5>
+                    </a> --}}
+                    <a href="{{ route('comments.showPostComments', $post) }}" class="comment-rink">
                         <h5 class="comment-watch">コメントを見る！</h5>
                     </a>
+                    
                     {{-- <div class="comment-box">
                 <h6 class="comment-name">投稿者：仮</h6>
                 <div class="comment-body">
