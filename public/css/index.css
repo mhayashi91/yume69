@@ -51,8 +51,8 @@ header {
   margin-bottom: 48px;
   margin-left: 24px;
   margin-right: 24px;
-  width: calc(50% - 48px);
-  /* height: 400px; */
+  
+  /* height: 400px; */width: calc(50% - 48px);
   border: 5px solid black;
   display: flex;
   flex-direction: column;
@@ -88,7 +88,6 @@ header {
 
 .title {
   width: 474px;
-
   padding: 12px;
 }
 

@@ -57,15 +57,17 @@
                         </div>
                     </div>
                     {{-- @endforeach --}}
-
                     <div class="buttons">
-                        <a href="" class="edit-button">編集</a>
-                        <form action="#" method="post">
+                        @if($post->user_id == Auth::user()->id)
+                        <a href="{{ route('posts.edit', $post->id) }}" class="edit-button">編集</a>
+                        <form action="{{ route('posts.destroy', $post->id) }}" method="post">
                             @csrf
                             @method('delete')
                             <input type="submit" value='削除' class="delete" onclick='return confirm("本当に削除しますか？")'>
                             
                         </form>
+                        @endif        
+
                         <a href="#" class="comment-button">コメント</a>
 
                         <div class="bookmark">
@@ -76,19 +78,20 @@
                             <a href="/posts/{{ $post->id }}/bookmarks" class="bookmark-icon "><i class="far fa-handshake"></i></a>
                             @endif
                             {{ $post->bookmarks->count() }}
+                            
                         </div>
-
+                       
                     </div>
                     <a href="" class="comment-rink">
                         <h5 class="comment-watch">コメントを見る！</h5>
                     </a>
                     {{-- <div class="comment-box">
-                <h6 class="comment-name">投稿者：仮</h6>
-                <div class="comment-body">
-                    <h6 class="comment-date">投稿日時：仮</h6>
-                    <p class="comment-text">内容：仮</p>
-                </div>
-            </div> --}}
+                         <h6 class="comment-name">投稿者：仮</h6>
+                         <div class="comment-body">
+                         <h6 class="comment-date">投稿日時：仮</h6>
+                         <p class="comment-text">内容：仮</p>
+                         </div>
+                         </div> --}}
                 </div>
             @endforeach
             
