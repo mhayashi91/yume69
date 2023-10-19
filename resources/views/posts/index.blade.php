@@ -85,16 +85,13 @@
                     <a href="" class="comment-rink">
                         <h5 class="comment-watch">コメントを見る！</h5>
                     </a>
-                    {{-- <a href="" class="comment-rink">
-                        <h5 class="comment-watch">コメントを見る！</h5>
-                    </a> --}}
                     {{-- <div class="comment-box">
-                <h6 class="comment-name">投稿者：仮</h6>
-                <div class="comment-body">
-                    <h6 class="comment-date">投稿日時：仮</h6>
-                    <p class="comment-text">内容：仮</p>
-                </div>
-            </div> --}}
+                         <h6 class="comment-name">投稿者：仮</h6>
+                         <div class="comment-body">
+                         <h6 class="comment-date">投稿日時：仮</h6>
+                         <p class="comment-text">内容：仮</p>
+                         </div>
+                         </div> --}}
                 </div>
             @endforeach
             
