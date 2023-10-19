@@ -36,8 +36,8 @@
 
                     <div class="post-box">
                         <div class="post-buttons">
-                            <button type="submit" class="cancel">
-                                キャンセル
+                            <button  type="button" class="cancel" onclick="window.location.href = '{{ route('posts.index') }}'">
+                                 戻る
                             </button>
                             <button type="submit" class="post">
                                 更新
