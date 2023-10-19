@@ -40,8 +40,8 @@
                     placeholder="内容" rows="5" name="body"></textarea>
                 </div>
                 <div class="post-buttons">
-                <button type="submit" class="cancel">キャンセル</button>
-                <button type="submit" class="comment-button">コメントする</button>
+                    <button type="button" class="cancel" onclick="window.location='{{ route('posts.index') }}'">キャンセル</button>
+                    <button type="submit" class="comment-button">コメントする</button>
                 </div>
             </form>
         </div>
