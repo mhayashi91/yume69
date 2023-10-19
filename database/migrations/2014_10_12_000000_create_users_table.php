@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('password', 90);
             $table->rememberToken();
             $table->text('avatar');
-            $table->string('occupation', 30)->nullable();
-            $table->string('introduction', 200)->nullable();
+            $table->string('occupation', 15)->nullable();
+            $table->string('introduction', 100)->nullable();
             $table->text('sns_link')->nullable();
             $table->timestamps();
         });
