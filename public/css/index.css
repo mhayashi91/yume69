@@ -80,7 +80,7 @@ header {
 }
 
 .post-content-cover {
-  width: 480px;
+  width: 80%;
   height: 300px;
   border: 3px solid black;
   border-radius: 5px;
@@ -88,7 +88,7 @@ header {
 
 .title {
   width: 474px;
-  border-bottom: 2px solid red;
+
   padding: 12px;
 }
 

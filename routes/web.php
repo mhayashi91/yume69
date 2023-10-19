@@ -56,4 +56,10 @@ Route::post('/comments',[App\Http\Controllers\CommentController::class, 'store']
 // ユーザー詳細ページ
 Route::get('/user/show/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
 
+// 登録情報の編集
+Route::get('/user/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
+
+// 登録情報の変更更新
+Route::put('/user/update', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
+
 // タグのルーティングはまだ書いてないのでそこんとこお願いします。

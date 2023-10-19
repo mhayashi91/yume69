@@ -64,7 +64,7 @@
                             @csrf
                             @method('delete')
                             <input type="submit" value='削除' class="delete" onclick='return confirm("本当に削除しますか？")'>
-                            {{-- btn btn-danger --}}
+                            
                         </form>
                         <a href="#" class="comment-button">コメント</a>
 
