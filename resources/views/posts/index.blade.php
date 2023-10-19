@@ -57,8 +57,8 @@
                         </div>
                     </div>
                     {{-- @endforeach --}}
-
                     <div class="buttons">
+                        @if($post->user_id == Auth::user()->id)
                         <a href="{{ route('posts.edit', $post->id) }}" class="edit-button">編集</a>
                         <form action="{{ route('posts.destroy', $post->id) }}" method="post">
                             @csrf
@@ -66,6 +66,8 @@
                             <input type="submit" value='削除' class="delete" onclick='return confirm("本当に削除しますか？")'>
                             {{-- btn btn-danger --}}
                         </form>
+                        @endif        
+
                         <a href="#" class="comment-button">コメント</a>
 
                         <div class="bookmark">
@@ -76,12 +78,16 @@
                             <a href="/posts/{{ $post->id }}/bookmarks" class="bookmark-icon "><i class="far fa-handshake"></i></a>
                             @endif
                             {{ $post->bookmarks->count() }}
+                            
                         </div>
-
+                       
                     </div>
                     <a href="" class="comment-rink">
                         <h5 class="comment-watch">コメントを見る！</h5>
                     </a>
+                    {{-- <a href="" class="comment-rink">
+                        <h5 class="comment-watch">コメントを見る！</h5>
+                    </a> --}}
                     {{-- <div class="comment-box">
                 <h6 class="comment-name">投稿者：仮</h6>
                 <div class="comment-body">
