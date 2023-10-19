@@ -12,7 +12,7 @@
                         <p class="card-text">内容：{{ $comment->body }}</p>
                     </div>
                 </div>
-                @endforeach
+            @endforeach
             </div>
         </div>
     

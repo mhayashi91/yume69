@@ -31,7 +31,11 @@ class CommentController extends Controller
     public function show($id)
     {
         $comment = Comment::find($id);
-        $post = $comment->post;  
+        // if (!$comment) {
+        //     abort(404, 'コメントが存在しません');
+        // }
+
+        $post = $comment-> post;  
         return view('comments.show', compact('comment', 'post'));
     }
 }
