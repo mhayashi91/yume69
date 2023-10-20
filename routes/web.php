@@ -62,6 +62,9 @@ Route::get('/comments/show-post-comments/{post}', [App\Http\Controllers\CommentC
 //コメント削除
 Route::delete('/comments/{id}', [App\Http\Controllers\CommentController::class, 'destroy'])->name('comments.destroy');
 
+// 検索機能
+Route::get('/posts/search', [App\Http\Controllers\PostController::class, 'search'])->name('posts.search');
+
 
 
 
