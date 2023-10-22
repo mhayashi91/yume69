@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Tag;
-use App\Models\Post_tag;
 use Illuminate\Support\Facades\Auth; 
-
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -29,30 +27,35 @@ class PostController extends Controller
 
     function store(Request $request)
     {
-        //   dd($request);
-
+        // 投稿を保存
         $post = new Post;
-        $post -> title = $request -> title;
-        $post -> contents = $request -> contents;
-        $post -> hassyu = $request -> hassyu;
-        $post -> user_id = Auth::id();
+        $post->title = $request->title;
+        $post->contents = $request->contents;
+        $post->user_id = Auth::id();
+        $post->save();
 
-        $post -> save();
+        // ハッシュタグを抽出
+        $hashtags = $this->extractHashtags($request->hassyu);
 
-        //DBトランザクション
-        DB::transaction(function() use($post){
-            $post_id = Post::insertGetId(['contents' => $post['contents'], 'user_id' => \Auth::id()]);
-            dd($post);
-            // $tag_exists = Tag::where('user_id', '=', \Auth::id())->where('name', '=', $post['hassyu'])
-            // ->exists();
+        // 各ハッシュタグをデータベースに保存
+        foreach ($hashtags as $hashtag) {
+            // タグをデータベースに保存または取得
+            $tag = Tag::firstOrCreate(['tag_name' => $hashtag]);
 
-            // if( !empty($post['hassyu']) && !$tag_exists ){
-            //     $tag_id = Tag::insertGetId(['user_id' => \Auth::id(), 'name' => $post['hassyu']]);
-            //     Post_tag::insert(['post_tag' => $post_id, 'tag_id' => $tag_id]);
-            // }
-        });
+            // 投稿とタグの関連を設定
+            $post->tags()->attach($tag->id);
+        }
 
         return redirect()->route('posts.index');
+    }
+
+    public function extractHashtags($content)
+    {
+        // 投稿内容からハッシュタグを正規表現で抽出
+        preg_match_all("/#(\w+)/", $content, $matches);
+
+        // ハッシュタグを配列として返す
+        return !empty($matches[1]) ? $matches[1] : [];
     }
 
     function edit($id)
