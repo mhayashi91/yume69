@@ -26,39 +26,64 @@ class PostController extends Controller
         return view('posts.create',['posts' => '$posts']);
     }
 
+    // public function store(Request $request)
+    // {
+    //     // 1. 投稿を保存
+    //     $post = new Post;
+    //     $post->title = $request->title;
+    //     $post->contents = $request->contents;
+    //     $post->user_id = Auth::id();
+    //     $post->save();
+    
+    //     // 2. ハッシュタグを抽出
+    //     $hashtags = $this->extractHashtags($request->hassyu);
+    
+    //     // 3. 各ハッシュタグをデータベースに保存
+    //     foreach ($hashtags as $hashtag) {
+    //         // タグをデータベースに保存または取得
+    //         $tag = Tag::firstOrCreate(['tag_name' => $hashtag]);
+    
+    //         // 4. 投稿とタグの関連を設定
+    //         $post->tags()->attach($tag->id);
+    //     }
+    
+    //     return redirect()->route('posts.index');
+    // }
+
     public function store(Request $request)
-    {
-        // 1. 投稿を保存
-        $post = new Post;
-        $post->title = $request->title;
-        $post->contents = $request->contents;
-        $post->user_id = Auth::id();
-        $post->save();
+{
+    // 1. 投稿を保存
+    $post = new Post;
+    $post->title = $request->title;
+    $post->contents = $request->contents;
+    $post->user_id = Auth::id();
+    $post->save();
+
+    // 2. ハッシュタグを抽出
+    $hashtags = $this->extractHashtags($request->hassyu);
+
+    // 3. 各ハッシュタグをデータベースに保存
+    foreach ($hashtags as $hashtag) {
+        // タグをデータベースに保存または取得
+        $tag = Tag::firstOrCreate(['tag_name' => $hashtag]);
+
+        // 4. 投稿とタグの関連を設定
+        $post->tags()->attach($tag->id);
+    }
+
+    return redirect()->route('posts.index');
+}
+
     
-        // 2. ハッシュタグを抽出
-        $hashtags = $this->extractHashtags($request->hassyu);
-    
-        // 3. 各ハッシュタグをデータベースに保存
-        foreach ($hashtags as $hashtag) {
-            // タグをデータベースに保存または取得
-            $tag = Tag::firstOrCreate(['tag_name' => $hashtag]);
-    
-            // 4. 投稿とタグの関連を設定
-            $post->tags()->attach($tag->id);
+        public function extractHashtags($hashtag)
+        {
+            // 投稿内容からハッシュタグを正規表現で抽出
+            preg_match_all('/#([a-zA-Z0-9０-９ぁ-んァ-ヶー一-龠]+)/u', $hashtag, $matches);
+        
+            // ハッシュタグを配列として返す
+            return !empty($matches[1]) ? $matches[1] : [];
         }
-    
-        return redirect()->route('posts.index');
-    }
-    
-    public function extractHashtags($content)
-    {
-        // 投稿内容からハッシュタグを正規表現で抽出
-        preg_match_all("/#(\w+)/", $content, $matches);
-    
-        // ハッシュタグを配列として返す
-        return !empty($matches[1]) ? $matches[1] : [];
-    }
-    
+        
 
 
     function edit($id)
