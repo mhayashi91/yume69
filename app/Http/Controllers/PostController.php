@@ -5,6 +5,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Auth; 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -25,17 +26,24 @@ class PostController extends Controller
         return view('posts.create',['posts' => '$posts']);
     }
 
-    function store(Request $request)
+    public function store(Request $request)
     {
+        // 1. 投稿を保存
+        $post = new Post;
+        $post->title = $request->title;
+        $post->contents = $request->contents;
+        $post->user_id = Auth::id();
+        $post->save();
+    
+        // ハッシュタグを抽出
+        $hashtags = $this->extractHashtags($request->hassyu);
+
         // 投稿を保存
         $post = new Post;
         $post->title = $request->title;
         $post->contents = $request->contents;
         $post->user_id = Auth::id();
         $post->save();
-
-        // ハッシュタグを抽出
-        $hashtags = $this->extractHashtags($request->hassyu);
 
         // 各ハッシュタグをデータベースに保存
         foreach ($hashtags as $hashtag) {
@@ -47,16 +55,19 @@ class PostController extends Controller
         }
 
         return redirect()->route('posts.index');
-    }
 
+    }
+    
     public function extractHashtags($content)
     {
         // 投稿内容からハッシュタグを正規表現で抽出
         preg_match_all("/#(\w+)/", $content, $matches);
-
+    
         // ハッシュタグを配列として返す
         return !empty($matches[1]) ? $matches[1] : [];
     }
+    
+
 
     function edit($id)
     {
