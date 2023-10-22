@@ -202,9 +202,16 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  /* background-color: var(--bs-body-bg); */
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-image: url(../img/ballon-1.jpg);
+  background-attachment: fixed;
+  background-size: contain;
+  background-size: cover;
+  background-position: center;
+  height: max-content;
+
 }
 
 hr {
@@ -234,7 +241,11 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: calc(1.305rem + 0.66vw);
+  /* position: relative;
+    top: 50px;
+    left: 60px; */
 }
+
 @media (min-width: 1200px) {
   h2, .h2 {
     font-size: 1.8rem;
@@ -242,8 +253,11 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: calc(1.2825rem + 0.39vw);
+  font-size: calc(1.305rem + 0.66vw);
+  /* position: relative;
+  bottom: 40px; */
 }
+
 @media (min-width: 1200px) {
   h3, .h3 {
     font-size: 1.575rem;
@@ -4349,7 +4363,7 @@ textarea.form-control-lg {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: var(--bs-body-bg);
+  /* --bs-card-bg: var(--bs-body-bg); */
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
   position: relative;
@@ -4391,6 +4405,7 @@ textarea.form-control-lg {
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
   color: var(--bs-card-color);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 0%), rgba(217, 217, 217, 0.60);
 }
 
 .card-title {
@@ -4416,8 +4431,9 @@ textarea.form-control-lg {
   padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
   margin-bottom: 0;
   color: var(--bs-card-cap-color);
-  background-color: var(--bs-card-cap-bg);
+  background-color: whitesmoke;
   border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  text-align: center;
 }
 .card-header:first-child {
   border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
@@ -8121,6 +8137,7 @@ textarea.form-control-lg {
 .py-4 {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
+  overflow: hidden;
 }
 
 .py-5 {
@@ -11982,9 +11999,10 @@ textarea.form-control-lg {
 footer {
   text-align: center;
   padding: 24px 0;
-  /* position: fixed; */
-  /* bottom: 0; */
+  position: fixed;
+  bottom: 0;
   width: 100%;
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+  /* position: absolute; */
 }

@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  .small-show{
+    margin-top: 48px; */
+    margin-bottom: 70px;
+    margin-left: 24px;
+    margin-right: 24px;
+    height: 500px;
+    width: calc(50% - 48px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
+}

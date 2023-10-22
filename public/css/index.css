@@ -3,7 +3,12 @@
   margin: 0;
 }
 body {
-  background-color: khaki;
+  background-image: url(../img/ballon-1.jpg);
+  background-attachment: fixed;
+  background-size: contain;
+  background-size: cover;
+  background-position: center;
+  height: max-content;
 }
 /* header部分 */
 header {
@@ -47,18 +52,18 @@ header {
   justify-content: space-between;
 }
 .post-box {
-  margin-top: 48px;
-  margin-bottom: 48px;
+  /* margin-top: 48px; */
+  margin-bottom: 70px;
   margin-left: 24px;
   margin-right: 24px;
-  
-  /* height: 400px; */width: calc(50% - 48px);
-  border: 5px solid black;
+  height: 500px;
+  width: calc(50% - 48px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 10%;
-  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
 }
 
 .profile-box {
@@ -89,6 +94,7 @@ header {
 .title {
   width: 474px;
   padding: 12px;
+  font-size: calc(1.305rem + 0.66vw);
 }
 
 .contents {

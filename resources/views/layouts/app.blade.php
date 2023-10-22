@@ -93,6 +93,6 @@
 </body>
 {{-- フッター追加 --}}
 <footer>
-    Copyright &copy; yume69 Inc.
+    Copyright © yume69 Inc.
   </footer>
 </html>
