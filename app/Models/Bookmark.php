@@ -16,4 +16,9 @@ class Bookmark extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+    public function likedBy($user)
+    {
+        return $this->where('user_id', $user->id)->where('post_id', $this->post_id)->exists();
+    }
+
 }
