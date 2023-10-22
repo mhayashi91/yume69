@@ -85,6 +85,15 @@ class PostController extends Controller
         }
         
 
+        public function searchByTag($tag)
+        {
+            $posts = Post::whereHas('tags', function ($query) use ($tag) {
+                $query->where('tag_name', $tag);
+            })->get();
+
+            return view('posts.index', compact('posts', 'tag'));
+        }
+
 
     function edit($id)
     {

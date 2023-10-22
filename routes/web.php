@@ -66,7 +66,12 @@ Route::delete('/comments/{id}', [App\Http\Controllers\CommentController::class, 
 Route::get('/posts/search', [App\Http\Controllers\PostController::class, 'search'])->name('posts.search');
 
 // タグ検索
-Route::post('/search-tags', [App\Http\Controllers\PostController::class, 'searchTags'])->name('tags.search');
+// Route::post('/search-tags', [App\Http\Controllers\PostController::class, 'searchTags'])->name('tags.search');
+// Route::get('/search-tags/{tag}', [App\Http\Controllers\PostController::class, 'searchByTag'])->name('tags.search');
+Route::get('/search-tags/{tag}', [App\Http\Controllers\PostController::class, 'searchByTag'])->name('tags.search');
+
+
+
 
 // ユーザー詳細ページ
 Route::get('/user/show/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
