@@ -82,7 +82,7 @@
                                 ->firstOrfail()->id }}" class="bookmark-icon "><i class="fas fa-handshake"></i></a>
                             @else
                             <a href="/posts/{{ $post->id }}/bookmarks" class="bookmark-icon "><i class="far fa-handshake"></i></a>
-                            @endif
+                            @endif    
                             {{ $post->bookmarks->count() }}
                             
                         </div>

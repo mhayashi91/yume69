@@ -65,9 +65,6 @@ Route::delete('/comments/{id}', [App\Http\Controllers\CommentController::class, 
 // 検索機能
 Route::get('/posts/search', [App\Http\Controllers\PostController::class, 'search'])->name('posts.search');
 
-
-
-
 // ユーザー詳細ページ
 Route::get('/user/show/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
 
@@ -77,4 +74,6 @@ Route::get('/user/edit', [App\Http\Controllers\UserController::class, 'edit'])->
 // 登録情報の変更更新
 Route::put('/user/update', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
 
+// ブックマーク一覧表示
+Route::get('/user/{id}/bookmarks',[App\Http\Controllers\UserController::class, 'showBookmarkedPosts'] )->name('user.bookmarks');
 // タグのルーティングはまだ書いてないのでそこんとこお願いします。

@@ -33,11 +33,12 @@
                     </div>
                 </div>
             </div>
-            <a href="" class="mybookmark">
+            <a href="{{ route('user.bookmarks', ['id' => $user->id]) }}" class="mybookmark">
                 <div class="mybookmark-box">
+                    {{ $user->name }}が
                     <i class="fas fa-handshake"></i>
-                    <p>一覧を見る！</p>
-                    <img src="{{ asset('storage/images/ue_mezasu_man.png') }}" alt="" class="mybookmark-image">
+                    した投稿を見る
+                    {{-- <img src="{{ asset('storage/images/ue_mezasu_man.png') }}" alt="" class="mybookmark-image"> --}}
                 </div>
             </a>
 

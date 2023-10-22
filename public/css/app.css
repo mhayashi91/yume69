@@ -11982,8 +11982,8 @@ textarea.form-control-lg {
 footer {
   text-align: center;
   padding: 24px 0;
-  /* position: fixed; */
-  /* bottom: 0; */
+  position: fixed;
+  bottom: 0;
   width: 100%;
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
