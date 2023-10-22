@@ -4,12 +4,12 @@
   }
 
   .small-show{
-    margin-top: 48px; */
-    margin-bottom: 70px;
-    margin-left: 24px;
-    margin-right: 24px;
-    height: 500px;
-    width: calc(50% - 48px);
+    margin-top: 48px;
+    /* margin-bottom: 70px; */
+    margin-left: 255px;
+    margin-right: 255px;
+    /* height: 500px; */
+    /* width: calc(50% - 48px); */
     display: flex;
     flex-direction: column;
     align-items: center;

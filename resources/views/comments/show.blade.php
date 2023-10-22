@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<link rel="stylesheet" type="text/css" href="{{ asset('css/show') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/show.css') }}">
 
         <div class="small-show">
           <h2>以下の投稿についたコメント一覧</h2>
