@@ -213,6 +213,7 @@ text-decoration: none;
 .not-exist {
   margin-top: 64px;
   text-align: center;
+  font-size: 24px;
 }
 
 .back-box {
@@ -232,8 +233,4 @@ text-decoration: none;
 .back:hover {
   background-color: #e74c3c; /* ホバー時の背景色 */
   color: #000; 
-}
-
-.ichiran {
-  margin-top: 32px;
 }

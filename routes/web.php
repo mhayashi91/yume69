@@ -76,4 +76,7 @@ Route::put('/user/update', [App\Http\Controllers\UserController::class, 'update'
 
 // ブックマーク一覧表示
 Route::get('/user/{id}/bookmarks',[App\Http\Controllers\UserController::class, 'showBookmarkedPosts'] )->name('user.bookmarks');
+
+//自分のマイページ表示
+Route::get('/myshow',[App\Http\Controllers\UserController::class, 'myshow'])->name('myshow');
 // タグのルーティングはまだ書いてないのでそこんとこお願いします。

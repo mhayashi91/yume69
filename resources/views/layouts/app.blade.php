@@ -69,9 +69,10 @@
                                     </form>
                                     
                                     <a class="dropdown-item" href="{{ route('user.edit') }}">
-                                       {{-- onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" --}}
                                         {{ __('登録情報更新') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('myshow') }}">
+                                        {{ __('マイページ') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('user.edit') }}" method="POST" class="d-none">
