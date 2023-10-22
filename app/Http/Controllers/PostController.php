@@ -36,25 +36,25 @@ class PostController extends Controller
         $post->save();
     
         // ハッシュタグを抽出
-        $hashtags = $this->extractHashtags($request->hassyu);
+    $hashtags = $this->extractHashtags($request->hassyu);
 
-        // 投稿を保存
-        $post = new Post;
-        $post->title = $request->title;
-        $post->contents = $request->contents;
-        $post->user_id = Auth::id();
-        $post->save();
+    // 投稿を保存
+    $post = new Post;
+    $post->title = $request->title;
+    $post->contents = $request->contents;
+    $post->user_id = Auth::id();
+    $post->save();
 
-        // 各ハッシュタグをデータベースに保存
-        foreach ($hashtags as $hashtag) {
-            // タグをデータベースに保存または取得
-            $tag = Tag::firstOrCreate(['tag_name' => $hashtag]);
+    // 各ハッシュタグをデータベースに保存
+    foreach ($hashtags as $hashtag) {
+        // タグをデータベースに保存または取得
+        $tag = Tag::firstOrCreate(['tag_name' => $hashtag]);
 
-            // 投稿とタグの関連を設定
-            $post->tags()->attach($tag->id);
-        }
+        // 投稿とタグの関連を設定
+        $post->tags()->attach($tag->id);
+    }
 
-        return redirect()->route('posts.index');
+    return redirect()->route('posts.index');
 
     }
     
