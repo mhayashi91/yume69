@@ -28,7 +28,7 @@
                                 <div class="hassyutagu-box">
                                     <div class="hassyu">
                                         <input id="hassyu" type="text" class="hassyu-area" name="hassyu" required
-                                            autofocus maxlength="30" placeholder="ハッシュタグを追加">
+                                            autofocus maxlength="30" placeholder="#ハッシュタグを追加">
                                     </div>
                                 </div>
 
