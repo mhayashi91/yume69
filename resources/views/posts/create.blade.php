@@ -33,7 +33,6 @@
                                     </div>
                                 </div>
                                 
-
                                 <div class="post-box">
                                     <div class="post-buttons">
                                         <button type="button" class="cancel"
