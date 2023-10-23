@@ -8,27 +8,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
-        <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/serch_index.css') }}">
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     </head>
 
     <body>
-        {{-- <header>
-            <div class="header-left">
-                <form action="{{ route('posts.search') }}" method="GET">
-                    <input type="text" name="query" placeholder="検索キーワード" class="search-bar">
-                    <button type="submit" class="search-button">検索</button>
-                </form>
-            </div>
-            <div class="header-right">
-                <button class="create-button">
-                    <a href="{{ route('posts.create') }}">新規投稿</a>
-                </button>
-            </div>
-        </header> --}}
-        <h2 style="text-align: center;">検索結果</h2>
+        <h1 style="text-align: center;">検索結果</h1>
         @if ($posts->isEmpty())
-            <p>該当するタスクはありません。</p>
+            <p class="not-exist">該当する投稿はありません。</p>
+            <div class="back-box">
+                <button type="button" class="back" onclick="history.back()">戻る</button>
+              </div>
         @else
         <div class="big-container">
             @foreach ($posts as $post)
@@ -40,8 +30,6 @@
                                 <img src="{{ asset('storage/images/' . $post->user->avatar) }}" alt="Image">
                             </a>
                         </div>
-                        {{-- @foreach ($posts as $post) --}}
-                        {{-- {{ dd($posts); }} --}}
                         <h3 class="name">{{ $post->user->name }}</h3>
                         <h3 class="occupation">{{ $post->user->occupation }}</h3>
                         <a href="{{ $post->user->sns_link }}" class="sns-icon">
@@ -58,7 +46,6 @@
                             <p class="tags_cnotent">{{ $post->tags_cnotent }}</p>
                         </div>
                     </div>
-                    {{-- @endforeach --}}
                     <div class="buttons">
                         @if($post->user_id == Auth::user()->id)
                         <a href="{{ route('posts.edit', $post->id) }}" class="edit-button">編集</a>

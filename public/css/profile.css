@@ -138,7 +138,7 @@ h1 {
 .update {
   text-decoration: none;
   background-color: skyblue;
-  padding: 20px 24px;
+  padding: 12px 24px;
   border-radius: 10px;
   text-align: center;
   color: black;
@@ -146,12 +146,11 @@ h1 {
 }
 
 .back {
-  padding: 8px 24px;
+  padding: 12px 24px;
   background-color: orange;
   text-decoration: none;
   display: flex;
   align-items: center;
-  margin-right: 72px;
   border-radius: 10px;
   font-size: 24px;
   color: black;

@@ -15,7 +15,7 @@
     <body>
         <h2 style="text-align: center;" class="ichiran">{{ $user->name }}が <i class="fas fa-handshake"></i>した投稿</h2>
         @if ($bookmarkedPosts->isEmpty())
-            <p class="not-exist">{{ $user->name }}がが<i class="fas fa-handshake"></i>した投稿はありません。</p>
+            <p class="not-exist">{{ $user->name }}が<i class="fas fa-handshake"></i>した投稿はありません。</p>
         @else
             <div class="big-container">
                 @foreach ($bookmarkedPosts as $post)
