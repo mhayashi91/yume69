@@ -82,4 +82,13 @@ class UserController extends Controller
 
         return view('bookmarks.index', compact('bookmarkedPosts', 'user'));
     }
+
+    public function myPosts($userId)
+    {
+        $user = User::findOrFail($userId);
+        $myPosts = $user->posts;
+
+        return view('mypost_index',compact('myPosts', 'user'));
+
+    }
 }

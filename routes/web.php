@@ -87,4 +87,7 @@ Route::get('/user/{id}/bookmarks',[App\Http\Controllers\UserController::class, '
 
 //自分のマイページ表示
 Route::get('/myshow',[App\Http\Controllers\UserController::class, 'myshow'])->name('myshow');
+
+//自分の投稿表示
+Route::get('/user/{id}/myposts',[App\Http\Controllers\UserController::class, 'myPosts'])->name('myposts');
 // タグのルーティングはまだ書いてないのでそこんとこお願いします。
