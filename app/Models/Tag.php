@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
+    protected $fillable = ['tag_name'];
+    public $timestamps = false;
     // use HasFactory;
     public function posts()
     {
