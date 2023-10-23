@@ -117,7 +117,7 @@
                          </div> --}}
                 </div>
             @endforeach
-            
+            {{ $posts->links() }}
         </div>
     </body>
 @endsection
