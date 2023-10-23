@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
+
     <link rel="stylesheet" type="text/css" href="{{ asset('css/create.css') }}">
+    <script src="{{ asset('js/livetagsearch.js') }}"></script>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -27,11 +30,10 @@
 
                                 <div class="hassyutagu-box">
                                     <div class="hassyu">
-                                        <input id="hassyu" type="text" class="hassyu-area" name="hassyu" required
-                                            autofocus maxlength="30" placeholder="ハッシュタグを追加">
+                                        <input id="tagInput" type="text" class="hassyu-area" name="hassyu" required autofocus maxlength="30" placeholder="#ハッシュタグを追加">
                                     </div>
                                 </div>
-
+                                
                                 <div class="post-box">
                                     <div class="post-buttons">
                                         <button type="button" class="cancel"

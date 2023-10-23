@@ -52,9 +52,22 @@
                             <h2 class="title">{{ $post->title }}</h2>
                             <p class="contents">{{ $post->contents }}</p>
                         </div>
-                        <div class="tags">
-                            <p class="tags_cnotent">{{ $post->tags_cnotent }}</p>
-                        </div>
+                        {{-- <div class="tags">
+                            @foreach ($post->tags as $tag)
+                                <p class="tags_content">#{{ $tag->tag_name }}</p>
+                            @endforeach
+                        </div> --}}
+                        {{-- <div class="tags">
+                            @foreach ($post->tags as $tag)
+                                <a href="{{ route('posts.search', ['tag' => $tag->tag_name]) }}" class="tags_content">#{{ $tag->tag_name }}</a>
+                            @endforeach
+                        </div> --}}
+                        @foreach ($post->tags as $tag)
+                            <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}">#{{ $tag->tag_name }}</a>
+                        @endforeach
+
+                        
+                        
                     </div>
                     {{-- @endforeach --}}
                     <div class="buttons">
