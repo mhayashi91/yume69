@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+
     <link rel="stylesheet" type="text/css" href="{{ asset('css/create.css') }}">
     <script src="{{ asset('js/livetagsearch.js') }}"></script>
 
