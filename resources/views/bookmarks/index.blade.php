@@ -27,7 +27,9 @@
                                     <img src="{{ asset('storage/images/' . $post->user->avatar) }}" alt="Image">
                                 </a>
                             </div>
-                            <h3 class="name">{{ $post->user->name }}</h3>
+                            <a href="{{ route('show', [$post->user->id]) }}">
+                                <h3 class="name">{{ $post->user->name }}</h3>
+                            </a>
                             <h3 class="occupation">{{ $post->user->occupation }}</h3>
                             <a href="{{ $post->user->sns_link }}" class="sns-icon">
                                 <i class="far fa-envelope"></i>
@@ -74,15 +76,15 @@
                         <a href="{{ route('comments.showPostComments', $post) }}" class="comment-rink">
                             <h5 cass="comment-watch">コメントを見る！</h5>
                         </a>
-        
+
                     </div>
                 @endforeach
         @endif
         </div>
         <div class="back-box">
-          <button type="button" class="back" onclick="history.back()">戻る</button>
+            <button type="button" class="back" onclick="history.back()">戻る</button>
         </div>
-        
+
     </body>
 @endsection
 

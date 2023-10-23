@@ -74,6 +74,15 @@ header {
   gap: 80px;
 }
 
+.name-link {
+ text-decoration: none;
+ color: black;
+}
+
+.name {
+  margin-bottom: 0;
+}
+
 .image-container img {
   width: 64px;
   border-radius: 50%;
@@ -82,6 +91,7 @@ header {
 
 .occupation {
   font-size: 16px;
+  margin-bottom: 0;
 }
 
 .post-content-cover {

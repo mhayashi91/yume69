@@ -23,7 +23,7 @@
 
                     <div class="yume-contents-box">
                             <div class="yume-contents">
-                                <textarea id="contents" class="yume-contents-area" name="contents" {{ $post->contents }} required maxlength="140" placeholder="夢・目標の内容（100字以内）"></textarea>
+                                <textarea id="contents" class="yume-contents-area" name="contents" {{ $post->contents }} required maxlength="140" placeholder="夢・目標の内容（100字以内）">{{ $post->contents }}</textarea>
                             </div>
                     </div>
 

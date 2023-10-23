@@ -34,7 +34,7 @@ class UserController extends Controller
     {
         // バリデーションルールを設定
         $rules = [
-            'name' => ['required', 'string', 'max:30'],
+            'name' => ['required', 'string', 'max:15'],
             'email' => ['required', 'string', 'email', 'max:30', 'unique:users,email,' . Auth::user()->id],
             'avatar' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:1024'], // 最大ファイルサイズと許可する画像形式を追加
             'password' => ['nullable', 'string', 'min:8', 'confirmed'],

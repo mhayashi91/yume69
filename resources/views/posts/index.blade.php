@@ -40,7 +40,9 @@
                         </div>
                         {{-- @foreach ($posts as $post) --}}
                         {{-- {{ dd($posts); }} --}}
+                        <a href="{{ route('show', [$post->user->id]) }}" class="name-link">
                         <h3 class="name">{{ $post->user->name }}</h3>
+                        </a>
                         <h3 class="occupation">{{ $post->user->occupation }}</h3>
                         <a href="{{ $post->user->sns_link }}" class="sns-icon">
                             <i class="far fa-envelope"></i>

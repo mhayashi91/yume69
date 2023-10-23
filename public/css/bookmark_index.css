@@ -69,6 +69,16 @@ header {
   gap: 80px;
 }
 
+.name-link {
+  text-decoration: none;
+  color: black;
+ }
+ 
+ .name {
+   margin-bottom: 0;
+ }
+ 
+
 .image-container img {
   width: 64px;
   border-radius: 50%;
@@ -81,18 +91,20 @@ header {
 
 .post-content-cover {
   width: 80%;
-  height: 300px;
+  height: 80%;
   border: 3px solid black;
   border-radius: 5px;
 }
 
 .title {
-  width: 474px;
+  /* width: 474px; */
   padding: 12px;
 }
 
 .contents {
   padding: 8px;
+  word-wrap: break-word;
+  width: 100%;
 }
 
 .sns-icon {
@@ -107,7 +119,7 @@ color: blue;
 }
 
 .post-content {
-  width: 475px;
+  /* width: 475px; */
   display: flex;
   flex-direction: column;
   align-items: start;
