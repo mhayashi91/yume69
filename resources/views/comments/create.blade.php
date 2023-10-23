@@ -6,7 +6,7 @@
 <div class="big-container">
     
     <div class="middle-container-1">
-        <h2>以下の記事にコメントします</h2>
+        <h2></h2>
         <div class="small-container-1">
             <div class="content-container">
                 <div class="card-header">
@@ -35,9 +35,10 @@
                 @csrf
                 <input type="hidden" name="post_id" value="{{ $post->id }}">
                 <div class="form-group">
-                    <h3>コメント</h3>
+                    <h3>＜コメント＞</h3>
                     <textarea class="form-control" 
-                    placeholder="内容" rows="5" name="body"></textarea>
+                    placeholder="内容" rows="5" name="body"class="form-control" 
+                    style="height: 302px;"></textarea>
                 </div>
                 <div class="post-buttons">
                     <button type="button" class="cancel" onclick="window.location='{{ route('posts.index') }}'">キャンセル</button>
