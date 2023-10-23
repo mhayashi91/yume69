@@ -17,7 +17,7 @@
         <header>
             <div class="header-left">
                 <!-- <h5 class="yume-text">ワード検索</h5> -->
-                <form action="#" method="GET">
+                <form action="{{ route('posts.search') }}" method="GET">
                     <input type="text" name="query" placeholder="検索キーワード" class="search-bar">
                     <button type="submit" class="search-button">検索</button>
                 </form>
@@ -82,7 +82,7 @@
                                 ->firstOrfail()->id }}" class="bookmark-icon "><i class="fas fa-handshake"></i></a>
                             @else
                             <a href="/posts/{{ $post->id }}/bookmarks" class="bookmark-icon "><i class="far fa-handshake"></i></a>
-                            @endif
+                            @endif    
                             {{ $post->bookmarks->count() }}
                             
                         </div>
