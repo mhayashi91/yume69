@@ -1,0 +1,18 @@
+/* pagination.css */
+.pagination {
+    /* display: flex;
+    justify-content: right;
+    text-align: center; */
+    position: relative;
+    margin-top: -60px;
+}
+
+.pagination ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+    display: inline-block;
+    margin-right: 10px;
+}

@@ -9,8 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
+        <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
         <link rel="stylesheet" href="{{ asset('css/index.css') }}">
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <script src="{{ asset('css/app.js') }}"></script>
     </head>
 
     <body>
@@ -54,16 +57,6 @@
                             <h2 class="title">{{ $post->title }}</h2>
                             <p class="contents">{{ $post->contents }}</p>
                         </div>
-                        {{-- <div class="tags">
-                            @foreach ($post->tags as $tag)
-                                <p class="tags_content">#{{ $tag->tag_name }}</p>
-                            @endforeach
-                        </div> --}}
-                        {{-- <div class="tags">
-                            @foreach ($post->tags as $tag)
-                                <a href="{{ route('posts.search', ['tag' => $tag->tag_name]) }}" class="tags_content">#{{ $tag->tag_name }}</a>
-                            @endforeach
-                        </div> --}}
                         @foreach ($post->tags as $tag)
                             <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}">#{{ $tag->tag_name }}</a>
                         @endforeach
@@ -101,25 +94,15 @@
                             {{ $post->bookmarks->count() }}
                             
                         </div>
-                       
                     </div>
-                    {{-- <a href="" class="comment-rink">
-                        <h5 class="comment-watch">コメントを見る！</h5>
-                    </a> --}}
                     <a href="{{ route('comments.showPostComments', $post) }}" class="comment-rink">
                         <h5 class="comment-watch">コメントを見る！</h5>
                     </a>
-                    
-                    {{-- <div class="comment-box">
-                         <h6 class="comment-name">投稿者：仮</h6>
-                         <div class="comment-body">
-                         <h6 class="comment-date">投稿日時：仮</h6>
-                         <p class="comment-text">内容：仮</p>
-                         </div>
-                         </div> --}}
                 </div>
             @endforeach
-            
+            <div class="pagination">
+                {{ $posts->links() }}
+            </div>
         </div>
     </body>
 @endsection
