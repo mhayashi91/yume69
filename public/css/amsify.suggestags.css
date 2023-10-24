@@ -21,6 +21,7 @@
 .amsify-suggestags-input-area
 .amsify-suggestags-input {
 	max-width: 200px;
+	width: 200px;
 	padding: 4px 4px;
 	border: 0;
 }

@@ -59,11 +59,8 @@
                         </div>
                         @foreach ($post->tags as $tag)
                             {{-- <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}">#{{ $tag->tag_name }}</a> --}}
-                            <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}" class="btn btn-sm btn-primary m-1">#{{ $tag->tag_name }}</a>
+                            <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}" class="btn btn-sm" style="background-color: #D8D8D8;">#{{ $tag->tag_name }}</a>
                         @endforeach
-
-                        
-                        
                     </div>
                     {{-- @endforeach --}}
                     <div class="buttons">

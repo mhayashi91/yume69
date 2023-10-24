@@ -36,11 +36,11 @@
                                     </div>
                                 </div>
 
-                                <div class="hassyutagu-box">
-                                    <div class="hassyu">
-                                        <input id="tagInput" type="text" class="hassyu-area" name="hassyu" required autofocus maxlength="30" placeholder="#ハッシュタグを追加"/>
-                                    </div>
-                                </div>
+                                {{-- <div class="hassyutagu-box">
+                                    <div class="hassyu"> --}}
+                                        <input id="tagInput" type="text" class="hassyu-area" name="hassyu" required autofocus maxlength="30" placeholder="#ハッシュタグを3つまで追加"/>
+                                    {{-- </div>
+                                </div> --}}
 
                                 <script>
                                     $(document).ready(function() {
