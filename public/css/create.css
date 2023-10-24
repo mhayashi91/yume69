@@ -37,6 +37,17 @@
 .hassyu-area {
   width: 500px;
   padding: 8px;
+  border: 1px;
+}
+
+.hassyutagu-box{
+  width: 500px;
+  border: 1px;
+}
+
+.hassyu{
+  width: 500px;
+   border: 1px;
 }
 
 .post-buttons {

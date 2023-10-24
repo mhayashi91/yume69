@@ -4,6 +4,14 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/create.css') }}">
     <script src="{{ asset('js/livetagsearch.js') }}"></script>
 
+    <script src="{{ asset('js/livetagsearch.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="node_modules/suggestags/dist/js/jquery.suggestags.min.js"></script>
+    <script src="{{ asset('js/jquery.amsify.suggestags.js') }}"></script>
+    {{-- <script src="public/js/jquery.amsify.suggestags.js"></script> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/amsify.suggestags.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/amsify.suggestags.css') }}">
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -28,11 +36,18 @@
                                     </div>
                                 </div>
 
-                                <div class="hassyutagu-box">
-                                    <div class="hassyu">
-                                        <input id="tagInput" type="text" class="hassyu-area" name="hassyu" required autofocus maxlength="30" placeholder="#ハッシュタグを追加">
-                                    </div>
-                                </div>
+                                {{-- <div class="hassyutagu-box">
+                                    <div class="hassyu"> --}}
+                                        <input id="tagInput" type="text" class="hassyu-area" name="hassyu" required autofocus maxlength="30" placeholder="#ハッシュタグを3つまで追加"/>
+                                    {{-- </div>
+                                </div> --}}
+
+                                <script>
+                                    $(document).ready(function() {
+                                        $('input[name="hassyu"]').amsifySuggestags();
+                                    });
+                                </script>
+                                
                                 
                                 <div class="post-box">
                                     <div class="post-buttons">
