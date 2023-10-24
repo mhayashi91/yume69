@@ -7,6 +7,10 @@
     margin-top: -60px;
 }
 
+.pagination > p { 
+    text-align: center;
+}
+
 .pagination ul {
     list-style: none;
     padding: 0;
