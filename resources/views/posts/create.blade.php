@@ -4,6 +4,14 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/create.css') }}">
     <script src="{{ asset('js/livetagsearch.js') }}"></script>
 
+    <script src="{{ asset('js/livetagsearch.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="node_modules/suggestags/dist/js/jquery.suggestags.min.js"></script>
+    <script src="{{ asset('js/jquery.amsify.suggestags.js') }}"></script>
+    {{-- <script src="public/js/jquery.amsify.suggestags.js"></script> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/amsify.suggestags.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/amsify.suggestags.css') }}"> --}}
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
