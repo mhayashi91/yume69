@@ -1,0 +1,241 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: khaki;
+}
+/* header部分 */
+header {
+  display: flex;
+  padding: 10px 32px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-button {
+  padding: 8px 16px;
+  background-color: green;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 48px;
+}
+
+.create-button>a {
+  text-decoration: none;
+  color: white;
+}
+
+.search-bar {
+  height: 40px;
+  border-radius: 5px;
+  padding: 0 8px;
+  margin-left: 48px;
+}
+
+.search-button {
+  height: 40px;
+  width: 56px;
+  background-color: skyblue;
+  border-radius: 5px;
+}
+
+
+/* 投稿部分 */
+.big-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+h1 {
+margin-bottom: 0;
+text-align: center;
+}
+.post-box {
+  margin-top: 48px;
+  margin-bottom: 48px;
+  margin-left: 24px;
+  margin-right: 24px;
+  
+  /* height: 400px; */width: calc(50% - 48px);
+  border: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10%;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
+}
+
+.profile-box {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin: 25px auto;
+  gap: 80px;
+}
+
+.image-container img {
+  width: 64px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.occupation {
+  font-size: 16px;
+}
+
+.post-content-cover {
+  width: 80%;
+  height: 300px;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.title {
+  width: 474px;
+  padding: 12px;
+}
+
+.contents {
+  padding: 8px;
+}
+
+.sns-icon {
+font-size: 40px;
+color: blue;
+}
+
+.tags{
+  width: 475px;
+  padding: 8px;
+  /* text-align: center; */
+}
+
+.post-content {
+  width: 475px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.contact-button {
+  width: 80px;
+  height: 60px;
+}
+
+
+.buttons {
+  margin-top: 32px;
+  display: flex;
+  gap: 60px;
+}
+
+.edit-button {
+  padding: 8px 12px;
+  background-color: skyblue;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.delete {
+  padding: 8px 12px;
+  /* background-color: gray; */
+  border-radius: 5px solid;
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+form {
+  margin:auto 0;
+}
+.bookmark {
+  display: flex;
+  align-items: center;
+}
+.bookmark-icon{
+background-color: yellow;
+padding: 8px 12px;
+border-radius: 5px;
+font-size: 32px;
+display: flex;
+align-items: center;
+text-decoration: none;
+}
+
+
+.comment-button {
+  text-decoration: none;
+  padding: 8px 12px;
+  background-color: orange;
+  color: black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.comment-rink {
+  text-decoration: none;
+  color: black;
+  background-color: greenyellow;
+  border-radius: 10px;
+  padding:16px 165px;
+  margin-bottom: 32px;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+}
+.comment-watch {
+  margin-bottom: 0;
+}
+
+.comment-box {
+  width: 400px;
+  border: 1px solid black;
+  margin-bottom: 25px;
+  border-radius: 5px;
+}
+.comment-body {
+  border-top: 1px solid black;
+}
+.comment-name {
+  margin-bottom: 0;
+  padding: 8px;
+}
+.comment-date {
+  margin-bottom: 0;
+  padding: 8px;
+}
+.comment-text {
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+.not-exist {
+  margin-top: 64px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.back-box {
+  text-align: center;
+}
+
+.back {
+  padding: 16px 32px;
+  border: none;
+  border-radius: 5px;
+  background-color: orange;
+  font-size: 24px;
+  margin-bottom: 64px;
+}
+
+.back:hover {
+  background-color: #e74c3c; /* ホバー時の背景色 */
+  color: #000; 
+}
