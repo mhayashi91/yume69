@@ -13,7 +13,7 @@ class PostController extends Controller
     public function index()
     {
         // $posts = Post::latest()->get();
-        $posts = Post::latest()->simplePaginate(6);
+        $posts = Post::latest()->paginate(6);
         return view ('posts.index' , compact('posts'));
     }
     
@@ -65,10 +65,11 @@ class PostController extends Controller
     {
         $posts = Post::whereHas('tags', function ($query) use ($tag) {
         $query->where('tag_name', $tag);
-        })->get();
+        })->paginate(6); 
 
-        return view('posts.index', compact('posts', 'tag'));
+        return view('posts.tagsearch', compact('posts', 'tag'));
     }
+
 
 
     //編集
@@ -116,10 +117,12 @@ class PostController extends Controller
     {
         $query = $request->input('query');
 
-        $posts = post::where('title', 'LIKE', "%$query%")
+        // ページネーションを有効にして検索結果を取得
+        $posts = Post::where('title', 'LIKE', "%$query%")
                     ->orWhere('contents', 'LIKE', "%$query%")
-                    ->get();
+                    ->paginate(6); // 1ページに表示する投稿数を設定
 
         return view('search', compact('posts', 'query'));
     }
+
 }

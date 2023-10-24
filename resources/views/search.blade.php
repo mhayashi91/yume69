@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
+        <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
         <link rel="stylesheet" href="{{ asset('css/serch_index.css') }}">
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     </head>
@@ -56,9 +57,10 @@
                             <h2 class="title">{{ $post->title }}</h2>
                             <p class="contents">{{ $post->contents }}</p>
                         </div>
-                        <div class="tags">
-                            <p class="tags_cnotent">{{ $post->tags_cnotent }}</p>
-                        </div>
+                        @foreach ($post->tags as $tag)
+                            {{-- <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}">#{{ $tag->tag_name }}</a> --}}
+                            <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}" class="btn btn-sm" style="background-color: #D8D8D8;">#{{ $tag->tag_name }}</a>
+                        @endforeach
                     </div>
                     <div class="buttons">
                         @if($post->user_id == Auth::user()->id)
@@ -96,6 +98,9 @@
                     
                 </div>
             @endforeach
+            <div class="pagination-box">
+                {{ $posts->links() }}
+            </div>
         @endif
         </div>
     </body>

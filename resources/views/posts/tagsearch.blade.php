@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 @extends('layouts.app')
-
 @section('content')
 
     <head>
@@ -10,26 +9,18 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
         <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
-        {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
-        <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/serch_index.css') }}">
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-        <script src="{{ asset('css/app.js') }}"></script>
     </head>
 
     <body>
-        <header>
-            <div class="header-left">
-                <form action="{{ route('posts.search') }}" method="GET">
-                    <input type="text" name="query" placeholder="検索キーワード" class="search-bar">
-                    <button type="submit" class="search-button">検索</button>
-                </form>
-            </div>
-            <div class="header-right">
-                <button class="create-button">
-                    <a href="{{ route('posts.create') }}">新規投稿</a>
-                </button>
-            </div>
-        </header>
+        <h1 style="text-align: center;">#{{ $tag }} でのタグ検索結果</h1>
+        @if ($posts->isEmpty())
+            <p class="not-exist">該当する投稿はありません。</p>
+            <div class="back-box">
+                <button type="button" class="back" onclick="history.back()">戻る</button>
+              </div>
+        @else
         <div class="big-container">
             @foreach ($posts as $post)
                 <div class="post-box">
@@ -41,7 +32,7 @@
                             </a>
                         </div>
                         <a href="{{ route('show', [$post->user->id]) }}" class="name-link">
-                            <h3 class="name">{{ $post->user->name }}</h3>
+                        <h3 class="name">{{ $post->user->name }}</h3>
                         </a>
                         <h3 class="occupation">{{ $post->user->occupation }}</h3>
                         <a href="{{ $post->user->sns_link }}" class="sns-icon">
@@ -70,46 +61,47 @@
                             {{-- <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}">#{{ $tag->tag_name }}</a> --}}
                             <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}" class="btn btn-sm" style="background-color: #D8D8D8;">#{{ $tag->tag_name }}</a>
                         @endforeach
-
                     </div>
                     <div class="buttons">
-                        @if ($post->user_id == Auth::user()->id)
-                            <a href="{{ route('posts.edit', $post->id) }}" class="edit-button">編集</a>
-                            <form action="{{ route('posts.destroy', $post->id) }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <input type="submit" value='削除' class="delete" onclick='return confirm("本当に削除しますか？")'>
+                        @if($post->user_id == Auth::user()->id)
+                        <a href="{{ route('posts.edit', $post->id) }}" class="edit-button">編集</a>
+                        <form action="{{ route('posts.destroy', $post->id) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <input type="submit" value='削除' class="delete" onclick='return confirm("本当に削除しますか？")'>
+                            
+                        </form>
+                        @endif    
 
-                            </form>
+
+                        {{-- <a href="{{ route('comments.create', ['post_id' => $post->id]) }}" class="comment-button">コメント</a> --}}
+                        @if($post->user->id !== Auth::user()->id)
+                        <a href="{{ route('comments.create', ['post_id' => $post->id]) }}" class="comment-button">コメント</a>
                         @endif
 
-                        @if ($post->user->id !== Auth::user()->id)
-                            <a href="{{ route('comments.create', ['post_id' => $post->id]) }}"
-                                class="comment-button">コメント</a>
-                        @endif
-
-
+                            
 
                         <div class="bookmark">
-                            @if ($post->likedBy(Auth::user())->count() > 0)
-                                <a href="/bookmarks/{{ $post->likedBy(Auth::user())->firstOrfail()->id }}"
-                                    class="bookmark-icon "><i class="fas fa-handshake"></i></a>
+                            @if($post->likedBy(Auth::user())->count() > 0)
+                            <a href="/bookmarks/{{ $post->likedBy(Auth::user())
+                                ->firstOrfail()->id }}" class="bookmark-icon "><i class="fas fa-handshake"></i></a>
                             @else
-                                <a href="/posts/{{ $post->id }}/bookmarks" class="bookmark-icon "><i
-                                        class="far fa-handshake"></i></a>
+                            <a href="/posts/{{ $post->id }}/bookmarks" class="bookmark-icon "><i class="far fa-handshake"></i></a>
                             @endif
                             {{ $post->bookmarks->count() }}
-
+                            
                         </div>
                     </div>
                     <a href="{{ route('comments.showPostComments', $post) }}" class="comment-rink">
-                        <h5 class="comment-watch">コメントを見る！</h5>
+                        <h5 cass="comment-watch">コメントを見る！</h5>
                     </a>
+                    
                 </div>
             @endforeach
             <div class="pagination-box">
                 {{ $posts->links() }}
             </div>
+        @endif
         </div>
     </body>
 @endsection
