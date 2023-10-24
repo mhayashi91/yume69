@@ -77,6 +77,11 @@ header {
  .name {
    margin-bottom: 0;
  }
+
+ .name-link {
+  text-decoration: none;
+  color: black;
+ }
  
 
 .image-container img {

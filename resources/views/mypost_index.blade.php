@@ -31,10 +31,24 @@
                                     <img src="{{ asset('storage/images/' . $post->user->avatar) }}" alt="Image">
                                 </a>
                             </div>
+                            <a href="{{ route('show', [$post->user->id]) }}" class="name-link">
                             <h3 class="name">{{ $post->user->name }}</h3>
+                            </a>
                             <h3 class="occupation">{{ $post->user->occupation }}</h3>
                             <a href="{{ $post->user->sns_link }}" class="sns-icon">
-                                <i class="far fa-envelope"></i>
+                                @if (strpos($post->user->sns_link, 'youtube') !== false)
+                                    <i class="fab fa-youtube" style="color: red;"></i>
+                                @elseif (strpos($post->user->sns_link, 'facebook') !== false)
+                                    <i class="fab fa-facebook" style="color: blue"></i>
+                                @elseif (strpos($post->user->sns_link, 'instagram') !== false)
+                                    <i class="fab fa-instagram" style="color: rgb(251, 82, 214);"></i>
+                                @elseif (strpos($post->user->sns_link, 'line') !== false)
+                                    <i class="fab fa-line" style="color: green;"></i>
+                                @elseif (strpos($post->user->sns_link, 'twitter') !== false)
+                                    <i class="fab fa-twitter" style="color: rgb(56, 203, 233);"></i>
+                                @else
+                                    <i class="fas fa-link" style="color: orange;"></i>
+                                @endif
                             </a>
                         </div>
 
