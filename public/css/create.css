@@ -33,11 +33,20 @@
   height: 150px;
   padding: 8px;
 }
-
+/* 
 .hassyu-area {
   width: 500px;
   padding: 8px;
+  border: 1px;
 }
+
+.hassyutagu-box{
+  width: 500px;
+}
+
+.hassyu{
+  width: 500px;
+} */
 
 .post-buttons {
   text-align: center;
