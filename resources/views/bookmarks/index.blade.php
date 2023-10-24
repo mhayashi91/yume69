@@ -45,7 +45,6 @@
                                 @else
                                     <i class="fas fa-link" style="color: orange;"></i>
                                 @endif
-                                
                             </a>
                         </div>
 
