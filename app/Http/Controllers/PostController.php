@@ -117,10 +117,12 @@ class PostController extends Controller
     {
         $query = $request->input('query');
 
-        $posts = post::where('title', 'LIKE', "%$query%")
+        // ページネーションを有効にして検索結果を取得
+        $posts = Post::where('title', 'LIKE', "%$query%")
                     ->orWhere('contents', 'LIKE', "%$query%")
-                    ->get();
+                    ->paginate(6); // 1ページに表示する投稿数を設定
 
         return view('search', compact('posts', 'query'));
     }
+
 }
