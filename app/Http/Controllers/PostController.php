@@ -65,10 +65,11 @@ class PostController extends Controller
     {
         $posts = Post::whereHas('tags', function ($query) use ($tag) {
         $query->where('tag_name', $tag);
-        })->get();
+        })->paginate(6); 
 
         return view('posts.index', compact('posts', 'tag'));
     }
+
 
 
     //編集

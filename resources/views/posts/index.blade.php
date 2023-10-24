@@ -108,7 +108,7 @@
                 </div>
             @endforeach
             <div class="pagination-box">
-                {{-- {{ $posts->links() }} --}}
+                {{ $posts->links() }}
             </div>
         </div>
     </body>
