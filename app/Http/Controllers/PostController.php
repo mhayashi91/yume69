@@ -79,18 +79,29 @@ class PostController extends Controller
     }
 
     //更新
-    function update(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $post = Post::find($id);
 
-        $post -> title = $request -> title;
-        $post -> contents = $request -> contents;
-        $post -> save();
+        $post->title = $request->title;
+        $post->contents = $request->contents;
+        $post->save();
 
-        $posts = Post::latest()->get();
+        // 既存のタグをデタッチ
+        $post->tags()->detach();
 
-        return view('posts.index',compact('posts'));
+        // 新しいタグ情報を抽出して保存
+        $hashtags = $this->extractHashtags($request->hassyu);
+        foreach ($hashtags as $hashtag) {
+            $tag = Tag::firstOrCreate(['tag_name' => $hashtag]);
+            $post->tags()->attach($tag->id);
+        }
+
+        // 他の処理...
+
+        return redirect()->route('posts.index');
     }
+
 
     //削除
     function destroy($id)
