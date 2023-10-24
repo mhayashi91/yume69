@@ -3958,15 +3958,25 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: space-between;
 }
-.navbar-brand {
-  padding-top: var(--bs-navbar-brand-padding-y);
+.title-katariba {
+  /* padding-top: var(--bs-navbar-brand-padding-y);
   padding-bottom: var(--bs-navbar-brand-padding-y);
   margin-right: var(--bs-navbar-brand-margin-end);
-  font-size: var(--bs-navbar-brand-font-size);
-  color: var(--bs-navbar-brand-color);
+  font-size: var(--bs-navbar-brand-font-size); */
+  color: #fff;
+  text-shadow:1px 1px 0 #000, -1px -1px 0 #000,
+              -1px 1px 0 #000, 1px -1px 0 #000,
+              0px 1px 0 #000,  0-1px 0 #000,
+              -1px 0 0 #000, 1px 0 0 #000;
+              
   text-decoration: none;
   white-space: nowrap;
-  /* background-image: url("{{ asset('/storage/images/yume-title.png') }}"); */
+  background-image: url(../img/yume-title.png);
+  background-size: cover;
+  padding: 8px;
+}
+.title-katariba:hover {
+  color: wheat;
 }
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
