@@ -1,16 +1,24 @@
 @extends('layouts.app')
 @section('content')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/create.css') }}">
+
+<link rel="stylesheet" type="text/css" href="{{ asset('css/create.css') }}">
+<script src="{{ asset('js/livetagsearch.js') }}"></script>
+<script src="{{ asset('js/livetagsearch.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="node_modules/suggestags/dist/js/jquery.suggestags.min.js"></script>
+<script src="{{ asset('js/jquery.amsify.suggestags.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('css/amsify.suggestags.css') }}">
+
     <div class="container">
-      <div class="row justify-content-center">
+    <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-              <div class="card-header">編集</div>
-                 <div class="card-body">
+            <div class="card-header">編集</div>
+                <div class="card-body">
                     <form method="POST" action="{{ route('posts.update', ['id' => $post]) }}" enctype="multipart/form-data">
                             @csrf
                             @method('put')
-                 
+                
 
                     <div class="card-body2">
                             <div class="yume-title-box">
@@ -29,23 +37,30 @@
 
                     <div class="hassyutagu-box">
                         <div class="hassyu">
-                            <input id="hassyu" type="text" class="hassyu-area" name="hassyu" required
-                                autofocus maxlength="30" placeholder="ハッシュタグを追加">
+                            <input id="tagInput" type="text" class="hassyu-area" name="hassyu" required
+                                autofocus maxlength="30" placeholder="#ハッシュタグを3つまで追加"
+                                value="{{ $post->getTagsList() }}">
                         </div>
                     </div>
+
+                    <script>
+                        $(document).ready(function() {
+                            $('input[name="hassyu"]').amsifySuggestags();
+                        });
+                    </script>
 
                     <div class="post-box">
                         <div class="post-buttons">
                             <button  type="button" class="cancel" onclick="window.location.href = '{{ route('posts.index') }}'">
-                                 戻る
+                                戻る
                             </button>
                             <button type="submit" class="post">
                                 更新
                             </button>
                         </div>
                     </form>
-                 </div>
-              </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>
