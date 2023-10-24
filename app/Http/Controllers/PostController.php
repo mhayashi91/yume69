@@ -67,7 +67,7 @@ class PostController extends Controller
         $query->where('tag_name', $tag);
         })->paginate(6); 
 
-        return view('posts.index', compact('posts', 'tag'));
+        return view('posts.tagsearch', compact('posts', 'tag'));
     }
 
 
