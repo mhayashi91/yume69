@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    //
-
+    //一覧表示
     public function index()
     {
         // $posts = Post::latest()->get();
@@ -18,90 +17,68 @@ class PostController extends Controller
         return view ('posts.index' , compact('posts'));
     }
     
-    // function create()
+    //新規作成
     function create(Request $request)
     {
         // return view('posts.create');
-
         $posts = Post::latest()->get();
         return view('posts.create',['posts' => '$posts']);
     }
 
-    // public function store(Request $request)
-    // {
-    //     // 1. 投稿を保存
-    //     $post = new Post;
-    //     $post->title = $request->title;
-    //     $post->contents = $request->contents;
-    //     $post->user_id = Auth::id();
-    //     $post->save();
-    
-    //     // 2. ハッシュタグを抽出
-    //     $hashtags = $this->extractHashtags($request->hassyu);
-    
-    //     // 3. 各ハッシュタグをデータベースに保存
-    //     foreach ($hashtags as $hashtag) {
-    //         // タグをデータベースに保存または取得
-    //         $tag = Tag::firstOrCreate(['tag_name' => $hashtag]);
-    
-    //         // 4. 投稿とタグの関連を設定
-    //         $post->tags()->attach($tag->id);
-    //     }
-    
-    //     return redirect()->route('posts.index');
-    // }
-
+    //新規作成保存・ハッシュタグ周り
     public function store(Request $request)
-{
-    // 1. 投稿を保存
-    $post = new Post;
-    $post->title = $request->title;
-    $post->contents = $request->contents;
-    $post->user_id = Auth::id();
-    $post->save();
+    {
+        // 1. 投稿を保存
+        $post = new Post;
+        $post->title = $request->title;
+        $post->contents = $request->contents;
+        $post->user_id = Auth::id();
+        $post->save();
 
-    // 2. ハッシュタグを抽出
-    $hashtags = $this->extractHashtags($request->hassyu);
+        // 2. ハッシュタグを抽出
+        $hashtags = $this->extractHashtags($request->hassyu);
 
-    // 3. 各ハッシュタグをデータベースに保存
-    foreach ($hashtags as $hashtag) {
-        // タグをデータベースに保存または取得
-        $tag = Tag::firstOrCreate(['tag_name' => $hashtag]);
+        // 3. 各ハッシュタグをデータベースに保存
+        foreach ($hashtags as $hashtag) {
+            // タグをデータベースに保存または取得
+            $tag = Tag::firstOrCreate(['tag_name' => $hashtag]);
 
-        // 4. 投稿とタグの関連を設定
-        $post->tags()->attach($tag->id);
+            // 4. 投稿とタグの関連を設定
+            $post->tags()->attach($tag->id);
+        }
+
+        return redirect()->route('posts.index');
     }
 
-    return redirect()->route('posts.index');
-}
-
     
-        public function extractHashtags($hashtag)
-        {
-            // 投稿内容からハッシュタグを正規表現で抽出
-            preg_match_all('/#([a-zA-Z0-9０-９ぁ-んァ-ヶー一-龠]+)/u', $hashtag, $matches);
-        
-            // ハッシュタグを配列として返す
-            return !empty($matches[1]) ? $matches[1] : [];
-        }
-        
+    public function extractHashtags($hashtag)
+    {
+        // 投稿内容からハッシュタグを正規表現で抽出
+        preg_match_all('/#([a-zA-Z0-9０-９ぁ-んァ-ヶー一-龠]+)/u', $hashtag, $matches);
+    
+        // ハッシュタグを配列として返す
+        return !empty($matches[1]) ? $matches[1] : [];
+    }
+    
 
-        public function searchByTag($tag)
-        {
-            $posts = Post::whereHas('tags', function ($query) use ($tag) {
-                $query->where('tag_name', $tag);
-            })->get();
+    public function searchByTag($tag)
+    {
+        $posts = Post::whereHas('tags', function ($query) use ($tag) {
+        $query->where('tag_name', $tag);
+        })->get();
 
-            return view('posts.index', compact('posts', 'tag'));
-        }
+        return view('posts.index', compact('posts', 'tag'));
+    }
 
 
+    //編集
     function edit($id)
     {
         $post = Post::find($id);
         return view('posts.edit',['post'=>$post]);
     }
 
+    //更新
     function update(Request $request, $id)
     {
         $post = Post::find($id);
@@ -115,6 +92,7 @@ class PostController extends Controller
         return view('posts.index',compact('posts'));
     }
 
+    //削除
     function destroy($id)
     {
         $post = Post::find($id);
@@ -122,6 +100,7 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
+    //簡単検索
     public function search(Request $request)
     {
         $query = $request->input('query');
