@@ -100,7 +100,7 @@
                     </a>
                 </div>
             @endforeach
-            <div class="pagination">
+            <div class="pagination-box">
                 {{ $posts->links() }}
             </div>
         </div>
