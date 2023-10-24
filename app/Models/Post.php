@@ -32,4 +32,14 @@ class Post extends Model
     {
         return $this->hasMany('App\Models\Comment');
     }
+
+    public function getTagsList()
+    {
+        return $this->tags->pluck('tag_name')->implode(', ');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
