@@ -40,11 +40,17 @@ header {
   border-radius: 5px;
 }
 
+
 /* 投稿部分 */
 .big-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+h1 {
+margin-bottom: 0;
+text-align: center;
 }
 .post-box {
   margin-top: 48px;
@@ -58,7 +64,7 @@ header {
   flex-direction: column;
   align-items: center;
   border-radius: 10%;
-  background-color: #fff;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
 }
 
 .profile-box {
@@ -69,21 +75,6 @@ header {
   /* gap: 80px; */
   width: 100%;
 }
-
-.name-link {
-  text-decoration: none;
-  color: black;
- }
- 
- .name {
-   margin-bottom: 0;
- }
-
- .name-link {
-  text-decoration: none;
-  color: black;
- }
- 
 
 .image-container img {
   width: 64px;
@@ -106,6 +97,15 @@ header {
   /* width: 474px; */
   padding: 12px;
 }
+
+.name-link {
+  text-decoration: none;
+  color: black;
+ }
+ 
+ .name {
+   margin-bottom: 0;
+ }
 
 .contents {
   padding: 8px;
@@ -201,8 +201,8 @@ text-decoration: none;
   margin-top: 32px;
   display: flex;
   align-items: center;
-  width: 90%;
   justify-content: center;
+  width: 90%;
 }
 .comment-watch {
   margin-bottom: 0;
@@ -233,27 +233,23 @@ text-decoration: none;
 .not-exist {
   margin-top: 64px;
   text-align: center;
+  font-size: 24px;
 }
 
 .back-box {
-  margin-top: 64px;
   text-align: center;
-  margin-bottom: 64px;
 }
 
 .back {
-  padding: 16px 24px;
+  padding: 16px 32px;
   border: none;
   border-radius: 5px;
   background-color: orange;
   font-size: 24px;
+  margin-bottom: 64px;
 }
 
 .back:hover {
   background-color: #e74c3c; /* ホバー時の背景色 */
   color: #000; 
-}
-
-.ichiran {
-  margin-top: 32px;
 }

@@ -8,17 +8,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
-        <link rel="stylesheet" href="{{ asset('css/bookmark_index.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/mypost.css') }}">
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     </head>
 
     <body>
-        <h2 style="text-align: center;" class="ichiran">{{ $user->name }}が <i class="fas fa-handshake"></i>した投稿</h2>
-        @if ($bookmarkedPosts->isEmpty())
-            <p class="not-exist">{{ $user->name }}が<i class="fas fa-handshake"></i>した投稿はありません。</p>
+            <h1>{{ $user->name }}の投稿</h1>
+     
+        @if ($myPosts->isEmpty())
+            <p class="not-exist">該当する投稿はありません。</p>
+            <div class="back-box">
+                <button type="button" class="back" onclick="history.back()">戻る</button>
+            </div>
         @else
             <div class="big-container">
-                @foreach ($bookmarkedPosts as $post)
+                @foreach ($myPosts as $post)
                     <div class="post-box">
 
                         <div class="profile-box">
@@ -28,7 +32,7 @@
                                 </a>
                             </div>
                             <a href="{{ route('show', [$post->user->id]) }}" class="name-link">
-                                <h3 class="name">{{ $post->user->name }}</h3>
+                            <h3 class="name">{{ $post->user->name }}</h3>
                             </a>
                             <h3 class="occupation">{{ $post->user->occupation }}</h3>
                             <a href="{{ $post->user->sns_link }}" class="sns-icon">
@@ -69,10 +73,14 @@
                                 </form>
                             @endif
 
+
+                            {{-- <a href="{{ route('comments.create', ['post_id' => $post->id]) }}" class="comment-button">コメント</a> --}}
                             @if ($post->user->id !== Auth::user()->id)
                                 <a href="{{ route('comments.create', ['post_id' => $post->id]) }}"
                                     class="comment-button">コメント</a>
                             @endif
+
+
 
                             <div class="bookmark">
                                 @if ($post->likedBy(Auth::user())->count() > 0)
@@ -83,6 +91,7 @@
                                             class="far fa-handshake"></i></a>
                                 @endif
                                 {{ $post->bookmarks->count() }}
+
                             </div>
                         </div>
                         <a href="{{ route('comments.showPostComments', $post) }}" class="comment-rink">
@@ -96,7 +105,6 @@
         <div class="back-box">
             <button type="button" class="back" onclick="history.back()">戻る</button>
         </div>
-
     </body>
 @endsection
 

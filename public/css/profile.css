@@ -17,12 +17,8 @@ h1 {
 .mypage {
   margin: 28px 64px 28px;
   padding: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color: #fff;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
   border-radius: 30px;
-  gap: 100px;
 }
 
 .profile {
@@ -67,7 +63,7 @@ h1 {
   font-size: 24px;
 }
 
-.sns-link {
+.sns-icon {
   font-size: 56px;
   color: green;
   padding: 0 24px;
@@ -77,15 +73,14 @@ h1 {
 
 .mybookmark-box {
   border-radius: 10px;
-  background-color: #B0E57C;
+  background-color: deepskyblue;
   ;
-  /* padding: 32px; */
-  /* width: 160px; */
-  /* height: 350px; */
+  padding: 8px;
   text-align: center;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
-  margin: auto 0;
+  margin-top: 100px;
+  /* margin-bottom: 80px; */
 }
 
 .mybookmark-box>p {
@@ -108,7 +103,7 @@ h1 {
 
 .fas {
   color: black;
-  font-size: 40px;
+  font-size: 24px;
 }
 
 .bottom-content {
@@ -132,12 +127,11 @@ h1 {
 .bottom-button {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 64px;
 }
 
 .update {
   text-decoration: none;
-  background-color: skyblue;
+  background-color: aquamarine;
   padding: 12px 24px;
   border-radius: 10px;
   text-align: center;
@@ -155,4 +149,42 @@ h1 {
   font-size: 24px;
   color: black;
   border: none;
+}
+
+.watch-index {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.mypost-box {
+    border-radius: 10px;
+    background-color: gold;
+    /* padding: 32px;  */
+    /* width: 160px; */
+    /* height: 350px; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* margin: auto 0;  */
+    /* margin-top: 120px; */
+    /* margin-bottom: 60px; */
+    padding: 8px;
+}
+
+.bottom-button-box {
+  margin-top: 64px;
+}
+
+.mypost {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+
+.post-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 80px;
 }

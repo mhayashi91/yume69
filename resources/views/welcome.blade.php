@@ -27,7 +27,7 @@
                 @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/posts') }}" class="left-btn">P o s t s</a>
+                        <a href="{{ url('/posts') }}" class="left-btn">T i m e l i n e</a>
                         <a class="dropdown-item right-btn" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">

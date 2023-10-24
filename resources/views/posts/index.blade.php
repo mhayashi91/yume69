@@ -19,7 +19,6 @@
     <body>
         <header>
             <div class="header-left">
-                <!-- <h5 class="yume-text">ワード検索</h5> -->
                 <form action="{{ route('posts.search') }}" method="GET">
                     <input type="text" name="query" placeholder="検索キーワード" class="search-bar">
                     <button type="submit" class="search-button">検索</button>
@@ -41,14 +40,24 @@
                                 <img src="{{ asset('storage/images/' . $post->user->avatar) }}" alt="Image">
                             </a>
                         </div>
-                        {{-- @foreach ($posts as $post) --}}
-                        {{-- {{ dd($posts); }} --}}
                         <a href="{{ route('show', [$post->user->id]) }}" class="name-link">
-                        <h3 class="name">{{ $post->user->name }}</h3>
+                            <h3 class="name">{{ $post->user->name }}</h3>
                         </a>
                         <h3 class="occupation">{{ $post->user->occupation }}</h3>
                         <a href="{{ $post->user->sns_link }}" class="sns-icon">
-                            <i class="far fa-envelope"></i>
+                            @if (strpos($post->user->sns_link, 'youtube') !== false)
+                                <i class="fab fa-youtube" style="color: red;"></i>
+                            @elseif (strpos($post->user->sns_link, 'facebook') !== false)
+                                <i class="fab fa-facebook" style="color: blue"></i>
+                            @elseif (strpos($post->user->sns_link, 'instagram') !== false)
+                                <i class="fab fa-instagram" style="color: rgb(251, 82, 214);"></i>
+                            @elseif (strpos($post->user->sns_link, 'line') !== false)
+                                <i class="fab fa-line" style="color: green;"></i>
+                            @elseif (strpos($post->user->sns_link, 'twitter') !== false)
+                                <i class="fab fa-twitter" style="color: rgb(56, 203, 233);"></i>
+                            @else
+                                <i class="fas fa-link" style="color: orange;"></i>
+                            @endif
                         </a>
                     </div>
 
@@ -61,36 +70,36 @@
                             {{-- <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}">#{{ $tag->tag_name }}</a> --}}
                             <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}" class="btn btn-sm" style="background-color: #D8D8D8;">#{{ $tag->tag_name }}</a>
                         @endforeach
+
                     </div>
-                    {{-- @endforeach --}}
                     <div class="buttons">
-                        @if($post->user_id == Auth::user()->id)
-                        <a href="{{ route('posts.edit', $post->id) }}" class="edit-button">編集</a>
-                        <form action="{{ route('posts.destroy', $post->id) }}" method="post">
-                            @csrf
-                            @method('delete')
-                            <input type="submit" value='削除' class="delete" onclick='return confirm("本当に削除しますか？")'>
-                            
-                        </form>
-                        @endif    
+                        @if ($post->user_id == Auth::user()->id)
+                            <a href="{{ route('posts.edit', $post->id) }}" class="edit-button">編集</a>
+                            <form action="{{ route('posts.destroy', $post->id) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <input type="submit" value='削除' class="delete" onclick='return confirm("本当に削除しますか？")'>
 
-
-                        {{-- <a href="{{ route('comments.create', ['post_id' => $post->id]) }}" class="comment-button">コメント</a> --}}
-                        @if($post->user->id !== Auth::user()->id)
-                        <a href="{{ route('comments.create', ['post_id' => $post->id]) }}" class="comment-button">コメント</a>
+                            </form>
                         @endif
 
-                            
+                        @if ($post->user->id !== Auth::user()->id)
+                            <a href="{{ route('comments.create', ['post_id' => $post->id]) }}"
+                                class="comment-button">コメント</a>
+                        @endif
+
+
 
                         <div class="bookmark">
-                            @if($post->likedBy(Auth::user())->count() > 0)
-                            <a href="/bookmarks/{{ $post->likedBy(Auth::user())
-                                ->firstOrfail()->id }}" class="bookmark-icon "><i class="fas fa-handshake"></i></a>
+                            @if ($post->likedBy(Auth::user())->count() > 0)
+                                <a href="/bookmarks/{{ $post->likedBy(Auth::user())->firstOrfail()->id }}"
+                                    class="bookmark-icon "><i class="fas fa-handshake"></i></a>
                             @else
-                            <a href="/posts/{{ $post->id }}/bookmarks" class="bookmark-icon "><i class="far fa-handshake"></i></a>
-                            @endif    
+                                <a href="/posts/{{ $post->id }}/bookmarks" class="bookmark-icon "><i
+                                        class="far fa-handshake"></i></a>
+                            @endif
                             {{ $post->bookmarks->count() }}
-                            
+
                         </div>
                     </div>
                     <a href="{{ route('comments.showPostComments', $post) }}" class="comment-rink">
@@ -98,7 +107,7 @@
                     </a>
                 </div>
             @endforeach
-            <div class="pagination">
+            <div class="pagination-box">
                 {{ $posts->links() }}
             </div>
         </div>

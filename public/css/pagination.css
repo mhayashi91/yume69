@@ -1,22 +1,21 @@
 /* pagination.css */
-.pagination {
+/* .pagination { */
     /* display: flex;
     justify-content: right;
     text-align: center; */
-    position: relative;
-    margin-top: -60px;
-}
+    /* position: relative;
+    margin-top: -60px; */
+/* } */
 
-.pagination > p { 
-    text-align: center;
-}
 
-.pagination ul {
-    list-style: none;
-    padding: 0;
-}
 
-.pagination li {
+/* .pagination li {
     display: inline-block;
     margin-right: 10px;
+} */
+.pagination-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 64px;
 }
