@@ -69,10 +69,11 @@ text-align: center;
 
 .profile-box {
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-around;
   align-items: center;
   margin: 25px auto;
-  gap: 80px;
+  /* gap: 80px; */
+  width: 100%;
 }
 
 .image-container img {
@@ -86,7 +87,7 @@ text-align: center;
 }
 
 .post-content-cover {
-  width: 80%;
+  width: 90%;
   height: 80%;
   border: 3px solid black;
   border-radius: 5px;
@@ -195,11 +196,13 @@ text-decoration: none;
   color: black;
   background-color: greenyellow;
   border-radius: 10px;
-  padding:16px 165px;
+  padding:16px;
   margin-bottom: 32px;
   margin-top: 32px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 90%;
 }
 .comment-watch {
   margin-bottom: 0;
