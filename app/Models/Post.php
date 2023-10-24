@@ -38,8 +38,4 @@ class Post extends Model
         return $this->tags->pluck('tag_name')->implode(', ');
     }
 
-    public function tags()
-    {
-        return $this->belongsToMany(Tag::class);
-    }
 }
