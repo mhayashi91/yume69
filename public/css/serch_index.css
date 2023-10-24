@@ -232,9 +232,8 @@ text-decoration: none;
 }
 
 .back-box {
-  margin-top: 64px;
+  /* margin-top: 64px; */
   text-align: center;
-  margin-bottom: 64px;
 }
 
 .back {
@@ -243,6 +242,7 @@ text-decoration: none;
   border-radius: 5px;
   background-color: orange;
   font-size: 24px;
+  margin-bottom: 64px;
 }
 
 .back:hover {
