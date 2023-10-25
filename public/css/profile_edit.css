@@ -7,3 +7,10 @@
     background-color: whitesmoke;
 
   }
+
+  .profile_editrow-mb-0 {
+    text-align: -webkit-right;
+  }
+
+
+  @media screen and (max-width:780px)

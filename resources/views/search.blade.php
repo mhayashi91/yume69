@@ -103,6 +103,7 @@
             </div>
         @endif
         </div>
+        <div class="back-box"><button type="button" onclick="history.back()" class="back">戻る</button></div>
     </body>
 @endsection
 

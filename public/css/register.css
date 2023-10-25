@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+
+  .register-row-mb-0 {
+    text-align: -webkit-right;
+  }
+
+  @media screen and (max-width:780px) {
+    .justify-content-center {
+        position: relative;
+        bottom: 23px;
+        padding: 1px;
+    }
+
+    .register-row-mb-3 {
+        margin: 8px;
+    }
+
+    .register-col-form-label {
+        margin: -15px;
+    }
+
+  }

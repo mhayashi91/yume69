@@ -456,7 +456,7 @@ th {
 }
 
 label {
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 button {
@@ -4447,6 +4447,10 @@ textarea.form-control-lg {
   background-color: whitesmoke;
   border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
   text-align: center;
+  font-size: 20px;
+  font-family: serif;
+  font-weight: bolder;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .card-header:first-child {
   border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
@@ -7749,7 +7753,7 @@ textarea.form-control-lg {
 
 .justify-content-center {
   justify-content: center !important;
-  padding: 22px;
+  /* padding: 22px; */
 }
 
 .justify-content-between {

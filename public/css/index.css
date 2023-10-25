@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
 }
-body {
+.body {
   background-image: url(../img/ballon-1.jpg);
   background-attachment: fixed;
   background-size: contain;
@@ -11,7 +11,7 @@ body {
   height: max-content;
 }
 /* header部分 */
-header {
+.header {
   display: flex;
   padding: 10px 32px;
   justify-content: space-between;
@@ -230,9 +230,3 @@ text-decoration: none;
   margin-bottom: 0;
   padding: 8px;
 }
-
-/* .btn btn-sm {
-  color: black;
-  border: none;
-  margin-left: 2px;
-} */
