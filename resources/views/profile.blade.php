@@ -14,40 +14,36 @@
     </head>
 
     <body>
+
         <h1>マイページ</h1>
         <div class="mypage">
-            <div class="post-container">
+            <div class="top-content">
                 <img src="{{ asset('storage/images/' . $user->avatar) }}"alt="" class="profile">
-                <div class="profile-content">
-                    <div class="top-content">
-                        <div class="name-occupation">
-                            <h3 class="name"><span>名前：</span>{{ $user->name }}</h3>
-                            <h3 class="occupation"><span>職業：</span>{{ $user->occupation }}</h3>
-                        </div>
-                        <a href="{{ $user->sns_link }}" class="sns-icon">
-                            @if (strpos($user->sns_link, 'youtube') !== false)
-                                <i class="fab fa-youtube" style="color: red;"></i>
-                            @elseif (strpos($user->sns_link, 'facebook') !== false)
-                                <i class="fab fa-facebook" style="color: blue"></i>
-                            @elseif (strpos($user->sns_link, 'instagram') !== false)
-                                <i class="fab fa-instagram" style="color: rgb(251, 82, 214);"></i>
-                            @elseif (strpos($user->sns_link, 'line') !== false)
-                                <i class="fab fa-line" style="color: green;"></i>
-                            @elseif (strpos($user->sns_link, 'twitter') !== false)
-                                <i class="fab fa-twitter" style="color: rgb(56, 203, 233);"></i>
-                            @else
-                                <i class="fas fa-link" style="color: orange;"></i>
-                            @endif
-                        </a>
-                    </div>
-                    <div class="bottom-content">
-                        <div class="introduction">
-                            <h5>自己紹介</h5>
-                            <p>{{ $user->introduction }}
-                            </p>
-                        </div>
-                    </div>
-
+                <div class="name-occupation">
+                    <h4 class="name"><span>名前：{{ $user->name }}</span></h4>
+                    <h5 class="occupation"><span>職業：{{ $user->occupation }}</span></h5>
+                </div>
+                <a href="{{ $user->sns_link }}" class="sns-icon">
+                    @if (strpos($user->sns_link, 'youtube') !== false)
+                        <i class="fab fa-youtube" style="color: red;"></i>
+                    @elseif (strpos($user->sns_link, 'facebook') !== false)
+                        <i class="fab fa-facebook" style="color: blue"></i>
+                    @elseif (strpos($user->sns_link, 'instagram') !== false)
+                        <i class="fab fa-instagram" style="color: rgb(251, 82, 214);"></i>
+                    @elseif (strpos($user->sns_link, 'line') !== false)
+                        <i class="fab fa-line" style="color: green;"></i>
+                    @elseif (strpos($user->sns_link, 'twitter') !== false)
+                        <i class="fab fa-twitter" style="color: rgb(56, 203, 233);"></i>
+                    @else
+                        <i class="fas fa-link" style="color: orange;"></i>
+                    @endif
+                </a>
+            </div>
+            <div class="bottom-content">
+                <div class="introduction">
+                    <h5 class="myself">自己紹介</h5>
+                    <p>{{ $user->introduction }}
+                    </p>
                 </div>
                 <div class="watch-index">
                     <a href="{{ route('user.bookmarks', ['id' => $user->id]) }}" class="mybookmark">
