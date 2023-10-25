@@ -249,3 +249,44 @@ text-decoration: none;
   background-color: #e74c3c; /* ホバー時の背景色 */
   color: #000; 
 }
+
+@media screen and (max-width: 780px) {
+  .big-container {
+      flex-direction: column;
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .post-box {
+      flex-direction: column;
+      width: 85%;
+      margin: 15px auto;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .profile-box {
+      margin: 8px auto;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .buttons {
+      margin-top: 8px;
+      gap: 30px
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .comment-rink{
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .header {
+      padding: 6px 16px;
+  }
+}
