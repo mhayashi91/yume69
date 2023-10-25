@@ -90,6 +90,15 @@ header {
   font-size: 16px;
 }
 
+@media screen and (max-width: 780px) {
+  .occupation {
+      margin: 0px;
+  }
+}
+
+
+
+
 .post-content-cover {
   width: 90%;
   height: 80%;
