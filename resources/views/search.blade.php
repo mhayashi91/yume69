@@ -17,9 +17,6 @@
         <h1 style="text-align: center;">検索結果</h1>
         @if ($posts->isEmpty())
             <p class="not-exist">該当する投稿はありません。</p>
-            <div class="back-box">
-                <button type="button" class="back" onclick="history.back()">戻る</button>
-              </div>
         @else
         <div class="big-container">
             @foreach ($posts as $post)
@@ -61,6 +58,7 @@
                             {{-- <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}">#{{ $tag->tag_name }}</a> --}}
                             <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}" class="btn btn-sm" style="background-color: #D8D8D8;">#{{ $tag->tag_name }}</a>
                         @endforeach
+                        <p class="post-date">投稿日時：{{ $post->created_at }}</p>
                     </div>
                     <div class="buttons">
                         @if($post->user_id == Auth::user()->id)
@@ -103,7 +101,9 @@
             </div>
         @endif
         </div>
+
         <div class="back-box"><button type="button" onclick="history.back()" class="back">戻る</button></div>
+
     </body>
 @endsection
 

@@ -19,7 +19,7 @@
             <p class="not-exist">該当する投稿はありません。</p>
             <div class="back-box">
                 <button type="button" class="back" onclick="history.back()">戻る</button>
-              </div>
+            </div>
         @else
         <div class="big-container">
             @foreach ($posts as $post)
@@ -103,6 +103,10 @@
             </div>
         @endif
         </div>
+        <div class="back-box">
+            <button type="button" class="back"
+            onclick="window.location.href = '{{ route('posts.index') }}'">戻る</button>
+            </div>
     </body>
 @endsection
 

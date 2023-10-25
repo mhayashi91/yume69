@@ -90,6 +90,15 @@ header {
   font-size: 16px;
 }
 
+@media screen and (max-width: 780px) {
+  .occupation {
+      margin: 0px;
+  }
+}
+
+
+
+
 .post-content-cover {
   width: 90%;
   height: 80%;
@@ -107,7 +116,10 @@ header {
   word-wrap: break-word;
   width: 100%;
 }
-
+.post-date {
+  margin-left: 8px;
+  margin-top: 8px;
+}
 .sns-icon {
 font-size: 40px;
 color: blue;
@@ -135,7 +147,9 @@ color: blue;
 .buttons {
   margin-top: 32px;
   display: flex;
-  gap: 60px;
+  /* gap: 60px; */
+  justify-content: space-around;
+  width: 100%;
 }
 
 .edit-button {
@@ -150,7 +164,7 @@ color: blue;
 }
 
 .delete {
-  padding: 8px 12px;
+  padding: 12px 12px;
   /* background-color: gray; */
   border-radius: 5px solid;
   display: flex;
@@ -243,9 +257,56 @@ text-decoration: none;
   background-color: orange;
   font-size: 24px;
   margin-bottom: 64px;
+  text-align: center;
 }
 
 .back:hover {
   background-color: #e74c3c; /* ホバー時の背景色 */
   color: #000; 
 }
+
+@media screen and (max-width: 780px) {
+  .big-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin: 24px;
+  }
+  .post-box {
+   width: 100%;
+   margin: 0;
+   margin-bottom: 24px;
+  }
+ 
+  header {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  }
+
+  .header-left {
+    order:1;
+  }
+ .create-button {
+   order: 2;
+   margin: 0;
+   margin-bottom: 32px;
+ }
+ .search-bar {
+   margin: 0;
+ }
+ .profile-box {
+   margin: 0;
+   margin: 10px 0;
+ }
+ .buttons {
+   margin: 0;
+   margin-top: 10px;
+ }
+ .comment-rink {
+   margin: 0;
+   margin: 10px 0;
+ }
+ }

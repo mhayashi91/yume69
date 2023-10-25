@@ -78,7 +78,10 @@ class UserController extends Controller
     public function showBookmarkedPosts($userId)
     {
         $user = User::findOrFail($userId);
-        $bookmarkedPosts = $user->bookmarks->pluck('post');
+        $bookmarkedPosts = $user->bookmarks->pluck('post')->paginate(6);
+        // $bookmarkedPosts = $user->bookmarks()
+        // ->with('post')
+        // ->paginate(6);
 
         return view('bookmarks.index', compact('bookmarkedPosts', 'user'));
     }
@@ -86,8 +89,8 @@ class UserController extends Controller
     public function myPosts($userId)
     {
         $user = User::findOrFail($userId);
-        $myPosts = $user->posts;
-
+        $myPosts = $user->posts()->paginate(6);
+        
         return view('mypost_index',compact('myPosts', 'user'));
 
     }
