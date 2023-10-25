@@ -26,10 +26,23 @@ header {
   margin-right: 48px;
 }
 
-.create-button>a {
+@media screen and (max-width: 780px) {
+  .create-button {
+      width: 12vh;
+      margin-bottom: 38px;
+      margin-right: 48px;
+      margin-left: 80px;
+  }
+}
+
+
+.create-button > a {
   text-decoration: none;
   color: white;
 }
+
+
+
 
 .search-bar {
   height: 40px;
@@ -38,6 +51,14 @@ header {
   margin-left: 48px;
 }
 
+@media screen and (max-width: 780px) {
+  .search-bar {
+      width: 16vh;
+      margin-left: 1px;
+  }
+}
+
+
 .search-button {
   height: 40px;
   width: 56px;
@@ -45,12 +66,21 @@ header {
   border-radius: 5px;
 }
 
+
 /* 投稿部分 */
 .big-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 780px) {
+  .big-container {
+      flex-direction: column;
+      width: 100%;
+  }
+}
+
 .post-box {
   margin-top: 48px;
   margin-bottom: 70px;
@@ -66,6 +96,15 @@ header {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
 }
 
+@media screen and (max-width: 780px) {
+  .post-box {
+      flex-direction: column;
+      width: 85%;
+      margin: 15px auto;
+  }
+}
+
+
 .profile-box {
   display: flex;
   justify-content: space-around;
@@ -74,6 +113,14 @@ header {
   /* gap: 80px; */
   width: 100%;
 }
+
+@media screen and (max-width: 780px) {
+  .profile-box {
+      margin: 8px auto;
+  }
+}
+
+
 
 .name-link {
  text-decoration: none;
@@ -144,6 +191,14 @@ font-size: 40px;
   gap: 60px;
 }
 
+@media screen and (max-width: 780px) {
+  .buttons {
+      margin-top: 8px;
+      gap: 30px
+  }
+}
+
+
 .edit-button {
   padding: 8px 12px;
   background-color: skyblue;
@@ -155,6 +210,7 @@ font-size: 40px;
   align-items: center;
 }
 
+
 .delete {
   padding: 8px 12px;
   /* background-color: gray; */
@@ -164,6 +220,7 @@ font-size: 40px;
   border: 1px solid transparent;
   border-radius: 5px;
 }
+
 form {
   margin:auto 0;
 }
@@ -205,6 +262,14 @@ text-decoration: none;
   justify-content: center;
   width: 90%;
 }
+
+@media screen and (max-width: 780px) {
+  .comment-rink{
+    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+}
+
 .comment-watch {
   margin-bottom: 0;
 }
@@ -236,3 +301,9 @@ text-decoration: none;
   border: none;
   margin-left: 2px;
 } */
+
+@media screen and (max-width: 780px) {
+  .header {
+      padding: 6px 16px;
+  }
+}
