@@ -22,32 +22,16 @@
 }
 
 .yume-title-area {
-  width: 500px;
   padding: 8px;
+  width: 100%;
 }
-.yume-contents {
- 
+.card {
+  width: 80%;
+  margin: 0 auto;
 }
 .yume-contents-area {
-  width: 500px;
   height: 150px;
   padding: 8px;
-}
-
-.hassyu-area {
-  width: 500px;
-  padding: 8px;
-  border: 1px;
-}
-
-.hassyutagu-box{
-  width: 500px;
-  border: 1px;
-}
-
-.hassyu{
-  width: 500px;
-   border: 1px;
 }
 
 .post-buttons {

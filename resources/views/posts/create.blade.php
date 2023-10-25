@@ -12,9 +12,9 @@
     {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/amsify.suggestags.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('css/amsify.suggestags.css') }}">
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+    {{-- <div class="container"> --}}
+        {{-- <div class="row justify-content-center"> --}}
+            {{-- <div class="col-md-8"> --}}
                 <div class="card">
                     <div class="card-header">新規投稿</div>
                     <div class="card-body">
@@ -35,13 +35,7 @@
                                             placeholder="夢・目標の内容（100字以内）"></textarea>
                                     </div>
                                 </div>
-
-                                {{-- <div class="hassyutagu-box">
-                                    <div class="hassyu"> --}}
                                         <input id="tagInput" type="text" class="hassyu-area" name="hassyu" required autofocus maxlength="30" placeholder="#ハッシュタグを3つまで追加"/>
-                                    {{-- </div>
-                                </div> --}}
-
                                 <script>
                                     $(document).ready(function() {
                                         $('input[name="hassyu"]').amsifySuggestags();
@@ -64,7 +58,7 @@
                     </div>
 
                 </div>
-            </div>
-        </div>
-    </div>
+            {{-- </div> --}}
+        {{-- </div> --}}
+    {{-- </div> --}}
 @endsection
