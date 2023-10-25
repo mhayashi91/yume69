@@ -17,9 +17,6 @@
         <h1 style="text-align: center;">検索結果</h1>
         @if ($posts->isEmpty())
             <p class="not-exist">該当する投稿はありません。</p>
-            <div class="back-box">
-                <button type="button" class="back" onclick="history.back()">戻る</button>
-              </div>
         @else
         <div class="big-container">
             @foreach ($posts as $post)
