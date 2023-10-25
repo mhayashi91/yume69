@@ -114,6 +114,10 @@ header {
   width: 100%;
 }
 
+.post-date {
+  margin-left: 8px;
+  margin-top: 8px;
+}
 .sns-icon {
 font-size: 40px;
 /* color: blue; */

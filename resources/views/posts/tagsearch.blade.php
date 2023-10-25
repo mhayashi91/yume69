@@ -103,6 +103,10 @@
             </div>
         @endif
         </div>
+        <div class="back-box">
+            <button type="button" class="back"
+            onclick="window.location.href = '{{ route('posts.index') }}'">戻る</button>
+            </div>
     </body>
 @endsection
 

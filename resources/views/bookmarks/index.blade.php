@@ -10,10 +10,13 @@
         <title>Document</title>
         <link rel="stylesheet" href="{{ asset('css/bookmark_index.css') }}">
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <script src="{{ asset('css/app.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
     </head>
 
     <body>
-        <h2 style="text-align: center;" class="ichiran">{{ $user->name }}が <i class="fas fa-handshake"></i>した投稿</h2>
+    
+        <h2 style="text-align: center;" class="ichiran">{{ $user->name }}が <i class="fas fa-handshake"></i>した投稿</h2> 
         @if ($bookmarkedPosts->isEmpty())
             <p class="not-exist">{{ $user->name }}が<i class="fas fa-handshake"></i>した投稿はありません。</p>
         @else
@@ -53,9 +56,11 @@
                                 <h2 class="title">{{ $post->title }}</h2>
                                 <p class="contents">{{ $post->contents }}</p>
                             </div>
-                            <div class="tags">
-                                <p class="tags_cnotent">{{ $post->tags_cnotent }}</p>
-                            </div>
+                            @foreach ($post->tags as $tag)
+                                <a href="{{ route('tags.search', ['tag' => $tag->tag_name]) }}" class="btn btn-sm"
+                                    style="background-color: #D8D8D8;">#{{ $tag->tag_name }}</a>
+                            @endforeach
+                            <p class="post-date">投稿日時：{{ $post->created_at }}</p>
                         </div>
                         <div class="buttons">
                             @if ($post->user_id == Auth::user()->id)
@@ -92,6 +97,9 @@
                     </div>
                 @endforeach
         @endif
+        </div>
+        <div class="pagination-box">
+            {{ $bookmarkedPosts->links() }}
         </div>
         <div class="back-box">
             <button type="button" class="back" onclick="history.back()">戻る</button>
