@@ -25,21 +25,20 @@ class PostController extends Controller
         return view('posts.create',['posts' => '$posts']);
     }
 
-    //新規作成保存・ハッシュタグ周り
     public function store(Request $request)
     {
-        // 1. 投稿を保存
-        $post = new Post;
-        $post->title = $request->title;
-        $post->contents = $request->contents;
-        $post->user_id = Auth::id();
-        $post->save();
-
         // 2. ハッシュタグを抽出
         $hashtags = $this->extractHashtags($request->hassyu);
 
         // 3. もしハッシュタグの数が3つ未満の場合に保存
         if (count($hashtags) <= 3) {
+            // 1. 投稿を保存
+            $post = new Post;
+            $post->title = $request->title;
+            $post->contents = $request->contents;
+            $post->user_id = Auth::id();
+            $post->save();
+
             // 各ハッシュタグをデータベースに保存
             foreach ($hashtags as $hashtag) {
                 // タグをデータベースに保存または取得
@@ -48,14 +47,14 @@ class PostController extends Controller
                 // 投稿とタグの関連を設定
                 $post->tags()->attach($tag->id);
             }
+
+            return redirect()->route('posts.index');
         } else {
-            // ハッシュタグが3つを超える場合の処理をここに記述
-            // 例えば、エラーメッセージを表示してリダイレクトするなど
+            // ハッシュタグが4つ以上の場合はリダイレクト
             return redirect()->route('posts.create')->with('error', 'ハッシュタグは3つまでです。');
         }
-
-        return redirect()->route('posts.index');
     }
+
 
     
     public function extractHashtags($hashtag)
