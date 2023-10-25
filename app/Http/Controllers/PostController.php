@@ -38,13 +38,20 @@ class PostController extends Controller
         // 2. ハッシュタグを抽出
         $hashtags = $this->extractHashtags($request->hassyu);
 
-        // 3. 各ハッシュタグをデータベースに保存
-        foreach ($hashtags as $hashtag) {
-            // タグをデータベースに保存または取得
-            $tag = Tag::firstOrCreate(['tag_name' => $hashtag]);
+        // 3. もしハッシュタグの数が3つ未満の場合に保存
+        if (count($hashtags) <= 3) {
+            // 各ハッシュタグをデータベースに保存
+            foreach ($hashtags as $hashtag) {
+                // タグをデータベースに保存または取得
+                $tag = Tag::firstOrCreate(['tag_name' => $hashtag]);
 
-            // 4. 投稿とタグの関連を設定
-            $post->tags()->attach($tag->id);
+                // 投稿とタグの関連を設定
+                $post->tags()->attach($tag->id);
+            }
+        } else {
+            // ハッシュタグが3つを超える場合の処理をここに記述
+            // 例えば、エラーメッセージを表示してリダイレクトするなど
+            return redirect()->route('posts.create')->with('error', 'ハッシュタグは3つまでです。');
         }
 
         return redirect()->route('posts.index');
