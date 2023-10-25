@@ -80,7 +80,6 @@
                                 @csrf
                                 @method('delete')
                                 <input type="submit" value='削除' class="delete" onclick='return confirm("本当に削除しますか？")'>
-
                             </form>
                         @endif
 
