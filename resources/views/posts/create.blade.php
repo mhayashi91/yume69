@@ -45,6 +45,14 @@
                             $('input[name="hassyu"]').amsifySuggestags();
                         });
                     </script>
+                    
+                    @if(session('error'))
+                    <script>
+                        alert('{{ session('error') }}');
+                    </script>
+                    @endif
+
+                    
 
 
                     <div class="post-box">
