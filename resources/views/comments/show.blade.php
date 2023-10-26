@@ -18,7 +18,7 @@
             <div class="post-content-box">
                 <div class="post-contents">
                     <div class="title">
-                        <h4>タイトル：{{ $post->title }}</h4>
+                        <h6>タイトル：{{ $post->title }}</h6>
                     </div>
                     <p class="card-text">内容：{{ $post->contents }}</p>
                 </div>
