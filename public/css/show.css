@@ -57,6 +57,7 @@
 .title {
   width: 100%;
   border-bottom: 1px solid black;
+  margin-bottom: 0;
 }
 .title > h6 {
   margin-bottom: 0;
@@ -124,6 +125,7 @@
 .comment {
   display: flex;
   flex-direction: column;
+  padding: 16px;
 }
 
 .comment-info, .comment-content {
@@ -161,9 +163,16 @@
   border-radius: 5px;
 }
 .table-comments {
-  margin-top: 16px;
+  /* margin-top: 16px; */
+  margin: 0;
 }
 .button-danger {
   margin: 16px 0 24px;
+}
+.comment-content {
+  margin-bottom: 0;
+}
+p {
+  margin-bottom: 0;
 }
 }
