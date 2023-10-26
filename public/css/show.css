@@ -3,164 +3,167 @@
     padding: 0;
   }
 
-  .small-show {
-    margin-top: 48px;
-    /* margin-bottom: 70px; */
-    margin-left: 255px;
-    margin-right: 255px;
-    height: 480px;
-    /* width: calc(50% - 48px); */
+  .big-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px;
-    border: 1px solid #000;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
-    word-wrap: break-word!important;
-  word-break: break-all;
-  white-space: normal;
   }
-
-.small-show h2 {
-  margin-top: 20px;
+  
+.content-container {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
+  border-radius: 25px;
+  width: 70%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid black;
 }
 
-.small-show h4 {
-  text-align: center;
+.image-name {
+  width: 60%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: end;
+}
+.image-container {
+  border-radius: 50%;
+  border: 1px solid black;
 }
 
-.col-md-8show {
-  text-align: center;
-  position: relative;
-  bottom: 110px;
+.post-content-box {
+  border: 1px solid black;
+  height: 60%;
+  width: 70%;
+  border-radius: 5px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.post-contents {
+   display: flex;
+   flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.post-content-box > p {
+  margin-bottom: 0;
+  padding: 8px;
 }
 
-.content-show {
-  padding: 19px 63px;
-  word-wrap: break-word;
+.title {
   width: 100%;
+  border-bottom: 1px solid black;
+}
+.title > h6 {
+  margin-bottom: 0;
+  padding: 8px;
+}
+.post-contents > p {
+  padding: 8px;
+  padding-bottom: 0;
+}
+
+.comment-index-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 32px 0;
+}
+
+.comment-index {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
+  width: 20%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.comment-index > h6 {
+  text-align: center;
+  margin-bottom: 0;
+  padding: 8px;
+}
+.comments-box-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.comments-box {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
+  border: 2px solid black;
+  border-radius: 25px;
+  width: 70%;
 }
 
 .show-header {
+  width: 100%;
   display: flex;
-  align-items: flex-end;
-  margin-bottom: 10px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 32px;
 }
 
-.name-boxshow {
-  position: relative;
+.table-comments {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  /* margin-left: 64px; */
+  margin-top: 32px;
+  padding: 8px;
 }
 
-.name-boxshow h3 {
-  margin-left: 20px;
-}
-
-.custom-table {
-  border-collapse: separate;
-  border-spacing: 18px 15px;
-}
-
-.custom-table td {
-  word-wrap: break-word!important;
-  word-break: break-all;
-  white-space: normal;
-  vertical-align: top;
-}
-
-.custom-table td:first-child {
-  min-width: 80px;
-  position: relative;
-}
-
-.custom-table td:first-of-type::after {
-  content: ":";
-  position: absolute;
-  right: 10px;
-}
-
-.card-custom {
-  margin-top: 48px;
-  /* margin-bottom: 70px; */
-  margin-left: 255px;
-  margin-right: 255px;
-  height: 400px;
-  /* width: calc(50% - 48px); */
+.comment {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border-radius: 10px;
-  border: 1px solid #000;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
-  word-wrap: break-word!important;
-  word-break: break-all;
-  white-space: normal;
 }
 
-.card-h4 {
-  border-radius: 10px;
-    text-align: center;
-    position: relative;
-    /* top: 30px; */
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
-    padding-top: 12px;
-    margin-top: 10px;
-    margin-left: 256px;
-    margin-right: 256px;
-    border: 1px solid #000;
-}
-
-.card-headershow {
-  margin-bottom: 20px;
-  margin-top: 20px;
-  font-size: 26px;
-  margin-right: 217px;
-}
-
-.card-textshow {
-  margin: revert;
-}
-
-.card-titleshow {
-  font-weight: bold;
-  font-size: 15px;
-  margin-top: 30px;
-}
-
-.mt-3show {
-  margin-top: 48px;
-  margin-bottom: 70px;
-  margin-left: 255px;
-  margin-right: 255px;
-  /* height: 400px; */
-  /* width: calc(50% - 48px); */
+.comment-info, .comment-content {
+  margin-bottom: 16px; 
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 10px;
-  border: 1px solid #000;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
-  word-wrap: break-word!important;
-  word-break: break-all;
-  white-space: normal;
-
+  flex-direction: row;
 }
-
-.mt-3show h4 {
-  font-size: 30px;
-  margin-top: 20px;
-}
-
-.custom-table2 {
-  padding: 35px 68px;
+.naiyou {
+  white-space: nowrap;
 }
 
 .button-danger {
-  position: relative;
-  text-align: center;
-  margin-top: 45px;
-  bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
-.footer {
-  position: inherit;
+@media screen and (max-width:780px) {
+
+.post-content-box {
+  height: 40%;
+}
+.content-container {
+  height: 500px;
+}
+.image-name {
+  width: 100%;
+}
+.comment-index {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.80) 0%), rgba(217, 217, 217, 0.80);
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.table-comments {
+  margin-top: 16px;
+}
+.button-danger {
+  margin: 16px 0 24px;
+}
 }
