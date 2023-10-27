@@ -9,8 +9,7 @@
             <div class="image-name">
                 <div class="image-container">
                     <a href="{{ route('show', [$post->user->id]) }}">
-                        <img src="{{ asset('storage/images/' . $post->user->avatar) }}" alt="Image" width="70px"
-                            height="70px">
+                        <img src="{{ asset('storage/images/' . $post->user->avatar) }}" alt="Image" class="image-prpfile">
                     </a>
                 </div>
                 <div class="name-box">
