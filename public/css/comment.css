@@ -30,9 +30,17 @@
 }
 
 .image-container {
+    /* border-radius: 50%;
+    border: 1px solid black;
+    width: 30%; */
+}
+.image-prpfile {
     border-radius: 50%;
     border: 1px solid black;
+    width: 50%;
+    height: 50%;
 }
+
 
 .post-content-box {
     border: 1px solid black;
@@ -137,6 +145,15 @@
         justify-content: space-around;
         align-items: center;
         gap: 16px;
+    }
+    .image-prpfile {
+        border-radius: 50%;
+        border: 1px solid black;
+        width: 50%;
+        height: 50%;
+    }
+    .image-name {
+        margin-top: 16px;
     }
     .content-container {
         width: 80%;
